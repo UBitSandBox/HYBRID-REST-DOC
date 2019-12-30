@@ -225,7 +225,7 @@ curl --request POST \
   --header 'Connection: keep-alive' \
   --header 'Host: 127.0.0.1:9002' \
   --header 'cache-control: no-cache'
-  --data '{"aclName": "Offen","aclNameF": "Ouvert","aclNameI": "Aperto","aclNameE": "Open","aclDef": "ALL[U:MODIFY]","aclDefClosed": "ALL[U:READ]","aclOnCreation": true,"removeAdditionalRights": false}'
+  --data '{"aclName": "Offen","aclDef": "ALL[U:MODIFY]","aclDefClosed": "ALL[U:READ]","aclOnCreation": true,"removeAdditionalRights": false}'
 ```
 
 ```javascript
@@ -261,5 +261,46 @@ Remember — you must be authenticated !
 </aside>
 
 ## Update an ACL
+```shell
+curl --request PUT \
+  --url http://127.0.0.1:9002/api/v1/ubit/acl/ \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}' \
+  --header 'Connection: keep-alive' \
+  --header 'Host: 127.0.0.1:9002' \
+  --header 'cache-control: no-cache'
+  --data '{"aclNameF": "Ouvert","aclNameI": "Aperto","aclNameE": "Open"}'
+```
+
+```javascript
+```
+
+>You must replace `{ACCESS_TOKEN}` with your personal token.
+
+This endpoint update an ACL.
+
+### HTTP Request
+
+`PUT http://127.0.0.1:9002/api/v1/ubit/acl/1`
+
+### URL Parameters
+Parameter | Description
+--------- | -----------
+ID | The ID of the ACL to retrieve
+
+### Body Parameters
+Parameter | Type | Description
+--------- | ----------- | -----------
+ACLNAME  | string | The german name of the ACL (3 to 255 characters)
+ACLNAME_F | string | The french name of the ACL (3 to 255 characters)
+ACLNAME_I | string | The italian name of the ACL (3 to 255 characters)
+ACLNAME_E | string | The english name of the ACL (3 to 255 characters)
+ACLDEF | string | TODO
+ACLDEF_CLOSED | string | TODO
+ACL_ON_CREATION | boolean | TODO
+REMOVE_ADDEDRIGHTS | boolean | TODO
+
+<aside class="success">
+Remember — you must be authenticated !
+</aside>
 
 ## Delete an ACL
