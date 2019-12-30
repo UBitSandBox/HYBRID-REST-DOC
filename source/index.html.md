@@ -73,9 +73,13 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
+# OS
+## Object
+Name | Type | Description
+--------- | ----------- | -----------
+
 # ACL
 ## Object
-
 Name | Type | Description
 --------- | ----------- | -----------
 ID | string | Id of the ACL
@@ -89,12 +93,11 @@ ACL_ON_CREATION | boolean | TODO
 REMOVE_ADDEDRIGHTS | boolean | TODO 
 
 
-## Get All ACL
+## Get all ACL
 ```shell
 curl --request GET \
   --url http://127.0.0.1:9002/api/v1/ubit/acl \
-  --header "Authorization: Bearer {ACCESS_TOKEN}" \
-  --header 'cache-control: no-cache'
+  --header "Authorization: Bearer {ACCESS_TOKEN}"
 ```
 
 ```javascript
@@ -102,9 +105,8 @@ var request = require("request");
 
 var options = { method: 'GET',
   url: 'http://127.0.0.1:9002/api/v1/ubit/acl',
-  headers: 
-   { 'Authorization': 'Bearer {ACCESS_TOKEN}',
-     'cache-control': 'no-cache' } };
+  headers: { 'Authorization': 'Bearer {ACCESS_TOKEN}'} 
+};
 
 request(options, function (error, response, body) {
   if (error) throw new Error(error);
@@ -159,10 +161,7 @@ Remember — you must be authenticated !
 ```shell
 curl --request GET \
   --url http://127.0.0.1:9002/api/v1/ubit/acl/1 \
-  --header 'Authorization: Bearer {ACCESS_TOKEN}' \
-  --header 'Connection: keep-alive' \
-  --header 'Host: 127.0.0.1:9002' \
-  --header 'cache-control: no-cache'
+  --header 'Authorization: Bearer {ACCESS_TOKEN}'
 ```
 
 ```javascript
@@ -170,11 +169,8 @@ var request = require("request");
 
 var options = { method: 'GET',
   url: 'http://127.0.0.1:9002/api/v1/ubit/acl/1',
-  headers: 
-   { 'cache-control': 'no-cache',
-     Connection: 'keep-alive',
-     Host: '127.0.0.1:9002',
-     Authorization: 'Bearer {ACCESS_TOKEN}' } };
+  headers: { Authorization: 'Bearer {ACCESS_TOKEN}' } 
+};
 
 request(options, function (error, response, body) {
   if (error) throw new Error(error);
@@ -222,9 +218,6 @@ Remember — you must be authenticated !
 curl --request POST \
   --url http://127.0.0.1:9002/api/v1/ubit/acl/ \
   --header 'Authorization: Bearer {ACCESS_TOKEN}' \
-  --header 'Connection: keep-alive' \
-  --header 'Host: 127.0.0.1:9002' \
-  --header 'cache-control: no-cache'
   --data '{"aclName": "Offen","aclDef": "ALL[U:MODIFY]","aclDefClosed": "ALL[U:READ]","aclOnCreation": true,"removeAdditionalRights": false}'
 ```
 
@@ -263,11 +256,8 @@ Remember — you must be authenticated !
 ## Update an ACL
 ```shell
 curl --request PUT \
-  --url http://127.0.0.1:9002/api/v1/ubit/acl/ \
+  --url http://127.0.0.1:9002/api/v1/ubit/acl/1 \
   --header 'Authorization: Bearer {ACCESS_TOKEN}' \
-  --header 'Connection: keep-alive' \
-  --header 'Host: 127.0.0.1:9002' \
-  --header 'cache-control: no-cache'
   --data '{"aclNameF": "Ouvert","aclNameI": "Aperto","aclNameE": "Open"}'
 ```
 
@@ -279,13 +269,12 @@ curl --request PUT \
 This endpoint update an ACL.
 
 ### HTTP Request
-
-`PUT http://127.0.0.1:9002/api/v1/ubit/acl/1`
+`PUT http://127.0.0.1:9002/api/v1/ubit/acl/<ID>`
 
 ### URL Parameters
 Parameter | Description
 --------- | -----------
-ID | The ID of the ACL to retrieve
+ID | The ID of the ACL to update
 
 ### Body Parameters
 Parameter | Type | Description
@@ -304,3 +293,266 @@ Remember — you must be authenticated !
 </aside>
 
 ## Delete an ACL
+```shell
+curl --request DELETE \
+  --url http://127.0.0.1:9002/api/v1/ubit/acl/1 \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+```javascript
+```
+>You must replace `{ACCESS_TOKEN}` with your personal token.
+
+This endpoint delete an ACL.
+
+### HTTP Request
+`DELETE http://127.0.0.1:9002/api/v1/ubit/acl/<ID>`
+
+### URL Parameters
+Parameter | Description
+--------- | -----------
+ID | The ID of the ACL to delete
+
+<aside class="success">
+Remember — you must be authenticated !
+</aside>
+
+# ACP
+## Object
+Name | Type | Description
+--------- | ----------- | -----------
+
+# OU
+## Object
+Name | Type | Description
+--------- | ----------- | -----------
+
+# Users
+## Object
+Name | Type | Description
+--------- | ----------- | -----------
+
+# Admins
+## Object
+Name | Type | Description
+--------- | ----------- | -----------
+
+# Roles
+## Object
+Name | Type | Description
+--------- | ----------- | -----------
+
+# Archive/Deadlines
+## Object
+Name | Type | Description
+--------- | ----------- | -----------
+ID | integer | Id of the deadlines
+TITLE | string | German title of the deadlines
+TITLE_F | string | French title of the deadlines
+TITLE_I | string | Italian title of the deadlines
+TITLE_E | string | English title of the deadlines
+
+## Get all deadlines
+
+```shell
+curl --request GET \
+  --url http://127.0.0.1:9002/api/v1/ubit/archive/deadlines \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+```javascript
+```
+
+>You must replace `{ACCESS_TOKEN}` with your personal token.
+
+>The above command returns JSON structured like this:
+
+```json
+[
+    {
+        "id": 1,
+        "title": "1 Jahr",
+        "titleF": "1 An",
+        "titleI": "1 Anno",
+        "titleE": "1 Year"
+    },
+    {
+        "id": 3,
+        "title": "3 Jahre",
+        "titleF": "3 Ans",
+        "titleI": "3 Anni",
+        "titleE": "3 Years"
+    }
+]
+```
+
+This endpoint retrieves all deadlines.
+
+### HTTP Request
+
+`GET http://127.0.0.1:9002/api/v1/ubit/archive/deadlines`
+
+<aside class="success">
+Remember — you must be authenticated !
+</aside>
+
+## Get deadline by its ID
+
+```shell
+curl --request GET \
+  --url http://127.0.0.1:9002/api/v1/ubit/archive/deadlines/1 \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+```javascript
+```
+
+>You must replace `{ACCESS_TOKEN}` with your personal token.
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "id": 1,
+    "title": "1 Jahr",
+    "titleF": "1 An",
+    "titleI": "1 Anno",
+    "titleE": "1 Year"
+}
+```
+
+This endpoint retrieves a specific deadline.
+
+### HTTP Request
+`GET http://127.0.0.1:9002/api/v1/ubit/archive/deadlines/<ID>`
+
+### URL Parameters
+Parameter | Description
+--------- | -----------
+ID | The ID of the deadline to retrieve
+
+<aside class="success">
+Remember — you must be authenticated !
+</aside>
+
+## Create a deadline
+```shell
+curl --request POST \
+  --url http://127.0.0.1:9002/api/v1/ubit/archive/deadlines/ \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}' \
+  --data '{"id": 5,"title": "5 Jahre"}'
+```
+
+```javascript
+```
+
+>You must replace `{ACCESS_TOKEN}` with your personal token.
+
+This endpoint create a deadline.
+
+### HTTP Request
+`POST http://127.0.0.1:9002/api/v1/ubit/archive/deadlines/`
+
+### Body Parameters
+Parameter | Type | Description
+--------- | ----------- | -----------
+ID * | integer | Id of the deadlines
+TITLE * | string | German title of the deadlines
+TITLE_F | string | French title of the deadlines
+TITLE_I | string | Italian title of the deadlines
+TITLE_E | string | English title of the deadlines
+
+<aside class="notice">
+Parameters marked with an asterisk (*) are mandatory.
+</aside>
+
+<aside class="success">
+Remember — you must be authenticated !
+</aside>
+
+## Update an ACL
+```shell
+curl --request PUT \
+  --url http://127.0.0.1:9002/api/v1/ubit/archive/deadlines/1 \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}' \
+  --data '{"titleF": "5 Ans","titleI": "5 Anni","titleE": "5 Years"}'
+```
+
+```javascript
+```
+
+>You must replace `{ACCESS_TOKEN}` with your personal token.
+
+This endpoint update a deadline.
+
+### HTTP Request
+`PUT http://127.0.0.1:9002/api/v1/ubit/archive/deadlines/<ID>`
+
+### URL Parameters
+Parameter | Description
+--------- | -----------
+ID | The ID of the deadline to update
+
+### Body Parameters
+Parameter | Type | Description
+--------- | ----------- | -----------
+ID | integer | Id of the deadlines
+TITLE | string | German title of the deadlines
+TITLE_F | string | French title of the deadlines
+TITLE_I | string | Italian title of the deadlines
+TITLE_E | string | English title of the deadlines
+
+<aside class="success">
+Remember — you must be authenticated !
+</aside>
+
+## Delete a deadline
+```shell
+curl --request DELETE \
+  --url http://127.0.0.1:9002/api/v1/ubit/archive/deadlines/1 \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+```javascript
+```
+>You must replace `{ACCESS_TOKEN}` with your personal token.
+
+This endpoint delete a deadline.
+
+### HTTP Request
+`DELETE http://127.0.0.1:9002/api/v1/ubit/archive/deadlines/<ID>`
+
+### URL Parameters
+Parameter | Description
+--------- | -----------
+ID | The ID of the deadline to delete
+
+<aside class="success">
+Remember — you must be authenticated !
+</aside>
+
+
+# Archive/Deadline category
+## Object
+Name | Type | Description
+--------- | ----------- | -----------
+
+# Archive/Data security
+## Object
+Name | Type | Description
+--------- | ----------- | -----------
+
+# Archive/Dispose type
+## Object
+Name | Type | Description
+--------- | ----------- | -----------
+
+# Archive/Public status
+## Object
+Name | Type | Description
+--------- | ----------- | -----------
+
+# Archive/Security class
+## Object
+Name | Type | Description
+--------- | ----------- | -----------
