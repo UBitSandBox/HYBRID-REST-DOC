@@ -1,10 +1,8 @@
 ---
-title: API Reference
+title: HYBRID-REST
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  - ruby
-  - python
   - javascript
 
 toc_footers:
@@ -25,35 +23,45 @@ We have language bindings in Shell, Ruby, Python, and JavaScript! You can view c
 
 This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
 
-# Authentication
+# Authentification
 
 > To authorize, use this code:
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
 ```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+curl --request POST \
+  --url http://127.0.0.1:9002/api/v1/ubit/auth/ \
+  --header 'Authorization: Basic c3VwZXJAdXNlci5jaDp1bml0VGVzdDEyMzQ=' \
+  --header 'Content-Type: application/json' \
+  --header 'cache-control: no-cache' \
+  --data '{\n	"access_token":"YfE9ye75tILYVOOzucvXkr2WMkNvhJai"\n}'
 ```
 
 ```javascript
-const kittn = require('kittn');
+var request = require("request");
 
-let api = kittn.authorize('meowmeowmeow');
-```
+var options = { method: 'POST',
+  url: 'http://127.0.0.1:9002/api/v1/ubit/auth/',
+  headers: 
+   { 'cache-control': 'no-cache',
+     Authorization: 'Basic c3VwZXJAdXNlci5jaDp1bml0VGVzdDEyMzQ=',
+     'Content-Type': 'application/json' },
+  body: { access_token: 'YfE9ye75tILYVOOzucvXkr2WMkNvhJai' },
+  json: true };
 
-> Make sure to replace `meowmeowmeow` with your API key.
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
+````
+> Assurez-vous de remplacer 
+>
+>`c3VwZXJAdXNlci5jaDp1bml0VGVzdDEyMzQ=` par votre nom d'utilisateur et mot de passe, encodé en base 64
+>
+> `YfE9ye75tILYVOOzucvXkr2WMkNvhJai` par votre Master Key.
+
+Lors de toute requête auprès de l’API, vous devez inclure un Token (Bearer Token) dans l’entête. 
+Ce token est généré à l’aide de la requête Auth
 
 Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
 
@@ -65,175 +73,193 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-# Kittens
+# ACL
+## Object
 
-## Get All Kittens
+Name | Type | Description
+--------- | ----------- | -----------
+ID | string | Id of the ACL
+ACLNAME | string | German name of the ACL
+ACLNAME_F | string | French name of the ACL
+ACLNAME_I | string | Italian name of the ACL
+ACLNAME_E | string | English name of the ACL
+ACLDEF | string | TODO
+ACLDEF_CLOSED | string | TODO
+ACL_ON_CREATION | boolean | TODO
+REMOVE_ADDEDRIGHTS | boolean | TODO 
 
-```ruby
-require 'kittn'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
+## Get All ACL
 ```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
+curl --request GET \
+  --url http://127.0.0.1:9002/api/v1/ubit/acl \
+  --header "Authorization: Bearer {ACCESS_TOKEN}" \
+  --header 'cache-control: no-cache'
 ```
 
 ```javascript
-const kittn = require('kittn');
+var request = require("request");
 
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+var options = { method: 'GET',
+  url: 'http://127.0.0.1:9002/api/v1/ubit/acl',
+  headers: 
+   { 'Authorization': 'Bearer {ACCESS_TOKEN}',
+     'cache-control': 'no-cache' } };
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
 ```
+
+>You must replace `{ACCESS_TOKEN}` with your personal token.
 
 > The above command returns JSON structured like this:
 
 ```json
 [
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
+    {
+        "id": 1,
+        "aclName": "Offen",
+        "aclNameF": "Ouvert",
+        "aclNameI": null,
+        "aclNameE": null,
+        "aclDef": "ALL[U:MODIFY]",
+        "aclDefClosed": "ALL[U:READ]",
+        "aclOnCreation": true,
+        "removeAdditionalRights": false
+    },
+    {
+        "id": 2,
+        "aclName": "LEITER",
+        "aclNameF": "RESPONSABLE",
+        "aclNameI": null,
+        "aclNameE": null,
+        "aclDef": "THIS[L:MODIFY]",
+        "aclDefClosed": "THIS[L:READ]",
+        "aclOnCreation": true,
+        "removeAdditionalRights": false
+    }
 ]
 ```
 
-This endpoint retrieves all kittens.
+This endpoint retrieves all ACL.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+`GET http://127.0.0.1:9002/api/v1/ubit/acl`
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Remember — you must be authenticated !
 </aside>
 
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
+## Get ACL by its ID
 
 ```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
+curl --request GET \
+  --url http://127.0.0.1:9002/api/v1/ubit/acl/1 \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}' \
+  --header 'Connection: keep-alive' \
+  --header 'Host: 127.0.0.1:9002' \
+  --header 'cache-control: no-cache'
 ```
 
 ```javascript
-const kittn = require('kittn');
+var request = require("request");
 
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+var options = { method: 'GET',
+  url: 'http://127.0.0.1:9002/api/v1/ubit/acl/1',
+  headers: 
+   { 'cache-control': 'no-cache',
+     Connection: 'keep-alive',
+     Host: '127.0.0.1:9002',
+     Authorization: 'Bearer {ACCESS_TOKEN}' } };
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
 ```
+
+>You must replace `{ACCESS_TOKEN}` with your personal token.
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+    "id": 1,
+    "aclName": "Offen",
+    "aclNameF": "Ouvert",
+    "aclNameI": null,
+    "aclNameE": null,
+    "aclDef": "ALL[U:MODIFY]",
+    "aclDefClosed": "ALL[U:READ]",
+    "aclOnCreation": true,
+    "removeAdditionalRights": false
 }
 ```
 
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+This endpoint retrieves a specific ACL.
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET http://127.0.0.1:9002/api/v1/ubit/acl/<ID>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to retrieve
+ID | The ID of the ACL to retrieve
 
-## Delete a Specific Kitten
+<aside class="success">
+Remember — you must be authenticated !
+</aside>
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
+## Create an ACL
 ```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
+curl --request POST \
+  --url http://127.0.0.1:9002/api/v1/ubit/acl/ \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}' \
+  --header 'Connection: keep-alive' \
+  --header 'Host: 127.0.0.1:9002' \
+  --header 'cache-control: no-cache'
+  --data '{"aclName": "Offen","aclNameF": "Ouvert","aclNameI": "Aperto","aclNameE": "Open","aclDef": "ALL[U:MODIFY]","aclDefClosed": "ALL[U:READ]","aclOnCreation": true,"removeAdditionalRights": false}'
 ```
 
 ```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
 ```
 
-> The above command returns JSON structured like this:
+>You must replace `{ACCESS_TOKEN}` with your personal token.
 
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
-
-This endpoint deletes a specific kitten.
+This endpoint create an ACL.
 
 ### HTTP Request
 
-`DELETE http://example.com/kittens/<ID>`
+`POST http://127.0.0.1:9002/api/v1/ubit/acl/`
 
-### URL Parameters
+### Body Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
+Parameter | Type | Description
+--------- | ----------- | -----------
+ACLNAME *  | string | The german name of the ACL (3 to 255 characters)
+ACLNAME_F | string | The french name of the ACL (3 to 255 characters)
+ACLNAME_I | string | The italian name of the ACL (3 to 255 characters)
+ACLNAME_E | string | The english name of the ACL (3 to 255 characters)
+ACLDEF  * | string | TODO
+ACLDEF_CLOSED  * | string | TODO
+ACL_ON_CREATION * | boolean | TODO
+REMOVE_ADDEDRIGHTS * | boolean | TODO
 
+<aside class="notice">
+Parameters marked with an asterisk (*) are mandatory.
+</aside>
+
+<aside class="success">
+Remember — you must be authenticated !
+</aside>
+
+## Update an ACL
+
+## Delete an ACL
