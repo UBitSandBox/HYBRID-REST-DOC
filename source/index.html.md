@@ -43,45 +43,20 @@ This example API documentation page was created with [Slate](https://github.com/
 ```shell
 curl --request POST \
   --url http://127.0.0.1:9002/api/v1/ubit/auth/ \
-  --header 'Authorization: Basic c3VwZXJAdXNlci5jaDp1bml0VGVzdDEyMzQ=' \
-  --header 'Content-Type: application/json' \
-  --header 'cache-control: no-cache' \
-  --data '{\n	"access_token":"YfE9ye75tILYVOOzucvXkr2WMkNvhJai"\n}'
+  --header 'Authorization: Basic {BASE64}}' \
+  --data '{"access_token":{MASTER_KEY}}'
 ```
 
 ```javascript
-var request = require("request");
-
-var options = { method: 'POST',
-  url: 'http://127.0.0.1:9002/api/v1/ubit/auth/',
-  headers: 
-   { 'cache-control': 'no-cache',
-     Authorization: 'Basic c3VwZXJAdXNlci5jaDp1bml0VGVzdDEyMzQ=',
-     'Content-Type': 'application/json' },
-  body: { access_token: 'YfE9ye75tILYVOOzucvXkr2WMkNvhJai' },
-  json: true };
-
-request(options, function (error, response, body) {
-  if (error) throw new Error(error);
-
-  console.log(body);
-});
 ````
-> Assurez-vous de remplacer 
+> You must replace `{BASE64}` with your username and password in base64 encoded.
 >
->`c3VwZXJAdXNlci5jaDp1bml0VGVzdDEyMzQ=` par votre nom d'utilisateur et mot de passe, encodé en base 64
->
-> `YfE9ye75tILYVOOzucvXkr2WMkNvhJai` par votre Master Key.
+> Your muste replace `{MASTER_KEY}` with your Master Key.
 
-Lors de toute requête auprès de l’API, vous devez inclure un Token (Bearer Token) dans l’entête. 
-Ce token est généré à l’aide de la requête Auth
+When making any API request to HYBRID-REST, you will need to include your token that was generated using the master key in a header that looks like the following:
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
+`Authorization: Basic eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTc3NzAzOTU5fQ.HEI6m7Twef5CKa-UMjhFoBSdIpgfMa4LKWVX-0vWf-I"`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTc3NzAzOTU5fQ.HEI6m7Twef5CKa-UMjhFoBSdIpgfMa4LKWVX-0vWf-I"</code> with your personal token.
 </aside>
