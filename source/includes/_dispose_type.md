@@ -2,11 +2,11 @@
 ## Dispose type Object
 Name | Type | Description
 --------- | ----------- | -----------
-ID | integer | Id of the dispose type
-TITLE | string | German title of the dispose type
-TITLE_F | string | French title of the dispose type
-TITLE_I | string | Italian title of the dispose type
-TITLE_E | string | English title of the dispose type
+id | integer | Id of the dispose type
+title | string | German title of the dispose type
+titleF | string | French title of the dispose type
+titleI | string | Italian title of the dispose type
+titleE | string | English title of the dispose type
 
 ## Get all dispose type
 ```shell
@@ -111,10 +111,10 @@ This endpoint create a dispose type
 ### Body Parameters
 Parameter | Type | Description
 --------- | ----------- | -----------
-TITLE * | string | German title of the dispose type
-TITLE_F | string | French title of the dispose type
-TITLE_I | string | Italian title of the dispose type
-TITLE_E | string | English title of the dispose type
+title * | string | German title of the dispose type
+titleF | string | French title of the dispose type
+titleI | string | Italian title of the dispose type
+titleE | string | English title of the dispose type
 
 <aside class="notice">
 Parameters marked with an asterisk (*) are mandatory.
@@ -150,10 +150,10 @@ ID | The ID of the dispose type to update
 ### Body Parameters
 Parameter | Type | Description
 --------- | ----------- | -----------
-TITLE | string | German title of the dispose type
-TITLE_F | string | French title of the dispose type
-TITLE_I | string | Italian title of the dispose type
-TITLE_E | string | English title of the dispose type
+title | string | German title of the dispose type
+titleF | string | French title of the dispose type
+titleI | string | Italian title of the dispose type
+titleE | string | English title of the dispose type
 
 <aside class="success">
 Remember — you must be authenticated !

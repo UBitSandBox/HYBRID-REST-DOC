@@ -2,15 +2,15 @@
 ## Deadline category Object
 Name | Type | Description
 --------- | ----------- | -----------
-ID | integer | Id of the deadline category
-TITLE | string | German title of the deadline category
-TITLE_F | string | French title of the deadline category
-TITLE_I | string | Italian title of the deadline category
-TITLE_E | string | English title of the deadline category
-DESC | string | German description of the deadline category
-DESC_F | string | French description of the deadline category
-DESC_I | string | Italian description of the deadline category
-DESC_E | string | English description of the deadline category
+id | integer | Id of the deadline category
+title | string | German title of the deadline category
+titleF | string | French title of the deadline category
+titleI | string | Italian title of the deadline category
+titleE | string | English title of the deadline category
+desc | string | German description of the deadline category
+descF | string | French description of the deadline category
+descI | string | Italian description of the deadline category
+descE | string | English description of the deadline category
 
 ## Get all deadline category
 
@@ -128,14 +128,14 @@ This endpoint create a deadline category.
 ### Body Parameters
 Parameter | Type | Description
 --------- | ----------- | -----------
-TITLE * | string | German title of the deadline category
-TITLE_F | string | French title of the deadline category
-TITLE_I | string | Italian title of the deadline category
-TITLE_E | string | English title of the deadline category
-DESC * | string | German description of the deadline category
-DESC_F | string | French description of the deadline category
-DESC_I | string | Italian description of the deadline category
-DESC_E | string | English description of the deadline category
+title * | string | German title of the deadline category
+titleF | string | French title of the deadline category
+titleI | string | Italian title of the deadline category
+titleE | string | English title of the deadline category
+desc * | string | German description of the deadline category
+descF | string | French description of the deadline category
+descI | string | Italian description of the deadline category
+descE | string | English description of the deadline category
 
 <aside class="notice">
 Parameters marked with an asterisk (*) are mandatory.
@@ -171,14 +171,14 @@ ID | The ID of the deadline category to update
 ### Body Parameters
 Parameter | Type | Description
 --------- | ----------- | -----------
-TITLE | string | German title of the deadline category
-TITLE_F | string | French title of the deadline category
-TITLE_I | string | Italian title of the deadline category
-TITLE_E | string | English title of the deadline category
-DESC | string | German description of the deadline category
-DESC_F | string | French description of the deadline category
-DESC_I | string | Italian description of the deadline category
-DESC_E | string | English description of the deadline category
+title | string | German title of the deadline category
+titleF | string | French title of the deadline category
+titleI | string | Italian title of the deadline category
+titleE | string | English title of the deadline category
+desc | string | German description of the deadline category
+descF | string | French description of the deadline category
+descI | string | Italian description of the deadline category
+descE | string | English description of the deadline category
 
 <aside class="success">
 Remember — you must be authenticated !

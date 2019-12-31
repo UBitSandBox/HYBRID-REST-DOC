@@ -2,11 +2,11 @@
 ## Deadlines Object
 Name | Type | Description
 --------- | ----------- | -----------
-ID | integer | Id of the deadlines
-TITLE | string | German title of the deadlines
-TITLE_F | string | French title of the deadlines
-TITLE_I | string | Italian title of the deadlines
-TITLE_E | string | English title of the deadlines
+id | integer | Id of the deadlines
+title | string | German title of the deadlines
+titleF | string | French title of the deadlines
+titleI | string | Italian title of the deadlines
+titleE | string | English title of the deadlines
 
 ## Get all deadlines
 
@@ -112,11 +112,11 @@ This endpoint create a deadline.
 ### Body Parameters
 Parameter | Type | Description
 --------- | ----------- | -----------
-ID * | integer | Id of the deadlines
-TITLE * | string | German title of the deadlines
-TITLE_F | string | French title of the deadlines
-TITLE_I | string | Italian title of the deadlines
-TITLE_E | string | English title of the deadlines
+id * | integer | Id of the deadlines
+title * | string | German title of the deadlines
+titleF | string | French title of the deadlines
+titleI | string | Italian title of the deadlines
+titleE | string | English title of the deadlines
 
 <aside class="notice">
 Parameters marked with an asterisk (*) are mandatory.
@@ -152,11 +152,11 @@ ID | The ID of the deadline to update
 ### Body Parameters
 Parameter | Type | Description
 --------- | ----------- | -----------
-ID | integer | Id of the deadlines
-TITLE | string | German title of the deadlines
-TITLE_F | string | French title of the deadlines
-TITLE_I | string | Italian title of the deadlines
-TITLE_E | string | English title of the deadlines
+id | integer | Id of the deadlines
+title | string | German title of the deadlines
+titleF | string | French title of the deadlines
+titleI | string | Italian title of the deadlines
+titleE | string | English title of the deadlines
 
 <aside class="success">
 Remember — you must be authenticated !

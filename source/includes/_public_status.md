@@ -2,11 +2,11 @@
 ## Public status Object
 Name | Type | Description
 --------- | ----------- | -----------
-ID | integer | Id of the public status
-TITLE | string | German title of the public status
-TITLE_F | string | French title of the public status
-TITLE_I | string | Italian title of the public status
-TITLE_E | string | English title of the public status
+id | integer | Id of the public status
+title | string | German title of the public status
+titleF | string | French title of the public status
+titleI | string | Italian title of the public status
+titleE | string | English title of the public status
 
 ## Get all public status
 ```shell
@@ -111,10 +111,10 @@ This endpoint create a public status.
 ### Body Parameters
 Parameter | Type | Description
 --------- | ----------- | -----------
-TITLE * | string | German title of the public status
-TITLE_F | string | French title of the public status
-TITLE_I | string | Italian title of the public status
-TITLE_E | string | English title of the public status
+title * | string | German title of the public status
+titleF | string | French title of the public status
+titleI | string | Italian title of the public status
+titleE | string | English title of the public status
 
 <aside class="notice">
 Parameters marked with an asterisk (*) are mandatory.
@@ -150,10 +150,10 @@ ID | The ID of the public status to update
 ### Body Parameters
 Parameter | Type | Description
 --------- | ----------- | -----------
-TITLE | string | German title of the public status
-TITLE_F | string | French title of the public status
-TITLE_I | string | Italian title of the public status
-TITLE_E | string | English title of the public status
+title | string | German title of the public status
+titleF | string | French title of the public status
+titleI | string | Italian title of the public status
+titleE | string | English title of the public status
 
 <aside class="success">
 Remember — you must be authenticated !

@@ -2,11 +2,11 @@
 ## Data security Object
 Name | Type | Description
 --------- | ----------- | -----------
-ID | integer | Id of the data security
-TITLE | string | German title of the data security
-TITLE_F | string | French title of the data security
-TITLE_I | string | Italian title of the data security
-TITLE_E | string | English title of the data security
+id | integer | Id of the data security
+title | string | German title of the data security
+titleF | string | French title of the data security
+titleI | string | Italian title of the data security
+titleE | string | English title of the data security
 
 ## Get all data security
 ```shell
@@ -111,10 +111,10 @@ This endpoint create a data security.
 ### Body Parameters
 Parameter | Type | Description
 --------- | ----------- | -----------
-TITLE * | string | German title of the data security
-TITLE_F | string | French title of the data security
-TITLE_I | string | Italian title of the data security
-TITLE_E | string | English title of the data security
+title * | string | German title of the data security
+titleF | string | French title of the data security
+titleI | string | Italian title of the data security
+titleE | string | English title of the data security
 
 <aside class="notice">
 Parameters marked with an asterisk (*) are mandatory.
@@ -150,10 +150,10 @@ ID | The ID of the data security to update
 ### Body Parameters
 Parameter | Type | Description
 --------- | ----------- | -----------
-TITLE | string | German title of the data security
-TITLE_F | string | French title of the data security
-TITLE_I | string | Italian title of the data security
-TITLE_E | string | English title of the data security
+title | string | German title of the data security
+titleF | string | French title of the data security
+titleI | string | Italian title of the data security
+titleE | string | English title of the data security
 
 <aside class="success">
 Remember — you must be authenticated !

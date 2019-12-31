@@ -2,11 +2,11 @@
 ## Security class Object
 Name | Type | Description
 --------- | ----------- | -----------
-ID | integer | Id of the security class
-TITLE | string | German title of the security class
-TITLE_F | string | French title of the security class
-TITLE_I | string | Italian title of the security class
-TITLE_E | string | English title of the security class
+id | integer | Id of the security class
+title | string | German title of the security class
+titleF | string | French title of the security class
+titleI | string | Italian title of the security class
+titleE | string | English title of the security class
 
 ## Get all security class
 ```shell
@@ -111,10 +111,10 @@ This endpoint create a security class.
 ### Body Parameters
 Parameter | Type | Description
 --------- | ----------- | -----------
-TITLE * | string | German title of the security class
-TITLE_F | string | French title of the security class
-TITLE_I | string | Italian title of the security class
-TITLE_E | string | English title of the security class
+title * | string | German title of the security class
+titleF | string | French title of the security class
+titleI | string | Italian title of the security class
+titleE | string | English title of the security class
 
 <aside class="notice">
 Parameters marked with an asterisk (*) are mandatory.
@@ -150,10 +150,10 @@ ID | The ID of the security class to update
 ### Body Parameters
 Parameter | Type | Description
 --------- | ----------- | -----------
-TITLE | string | German title of the public status
-TITLE_F | string | French title of the public status
-TITLE_I | string | Italian title of the public status
-TITLE_E | string | English title of the public status
+title | string | German title of the security class
+titleF | string | French title of the security class
+titleI | string | Italian title of the security class
+titleE | string | English title of the security class
 
 <aside class="success">
 Remember — you must be authenticated !

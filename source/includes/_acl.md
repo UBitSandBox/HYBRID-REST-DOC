@@ -2,15 +2,15 @@
 ## ACL Object
 Name | Type | Description
 --------- | ----------- | -----------
-ID | string | Id of the ACL
-ACLNAME | string | German name of the ACL
-ACLNAME_F | string | French name of the ACL
-ACLNAME_I | string | Italian name of the ACL
-ACLNAME_E | string | English name of the ACL
-ACLDEF | string | TODO
-ACLDEF_CLOSED | string | TODO
-ACL_ON_CREATION | boolean | TODO
-REMOVE_ADDEDRIGHTS | boolean | TODO 
+id | string | Id of the ACL
+aclName | string | German name of the ACL
+aclNameF | string | French name of the ACL
+aclNameI | string | Italian name of the ACL
+aclNameE | string | English name of the ACL
+aclDef | string | TODO
+aclDefClosed | string | TODO
+aclOnCreation | boolean | TODO
+removeAdditionalRights | boolean | TODO 
 
 ## Get all ACL
 ```shell
@@ -155,14 +155,14 @@ This endpoint create an ACL.
 
 Parameter | Type | Description
 --------- | ----------- | -----------
-ACLNAME *  | string | The german name of the ACL (3 to 255 characters)
-ACLNAME_F | string | The french name of the ACL (3 to 255 characters)
-ACLNAME_I | string | The italian name of the ACL (3 to 255 characters)
-ACLNAME_E | string | The english name of the ACL (3 to 255 characters)
-ACLDEF  * | string | TODO
-ACLDEF_CLOSED  * | string | TODO
-ACL_ON_CREATION * | boolean | TODO
-REMOVE_ADDEDRIGHTS * | boolean | TODO
+aclName * | string | German name of the ACL
+aclNameF | string | French name of the ACL
+aclNameI | string | Italian name of the ACL
+aclNameE | string | English name of the ACL
+aclDef * | string | TODO
+aclDefClosed * | string | TODO
+aclOnCreation * | boolean | TODO
+removeAdditionalRights * | boolean | TODO 
 
 <aside class="notice">
 Parameters marked with an asterisk (*) are mandatory.
@@ -198,14 +198,14 @@ ID | The ID of the ACL to update
 ### Body Parameters
 Parameter | Type | Description
 --------- | ----------- | -----------
-ACLNAME  | string | The german name of the ACL (3 to 255 characters)
-ACLNAME_F | string | The french name of the ACL (3 to 255 characters)
-ACLNAME_I | string | The italian name of the ACL (3 to 255 characters)
-ACLNAME_E | string | The english name of the ACL (3 to 255 characters)
-ACLDEF | string | TODO
-ACLDEF_CLOSED | string | TODO
-ACL_ON_CREATION | boolean | TODO
-REMOVE_ADDEDRIGHTS | boolean | TODO
+aclName | string | German name of the ACL
+aclNameF | string | French name of the ACL
+aclNameI | string | Italian name of the ACL
+aclNameE | string | English name of the ACL
+aclDef | string | TODO
+aclDefClosed | string | TODO
+aclOnCreation | boolean | TODO
+removeAdditionalRights | boolean | TODO 
 
 <aside class="success">
 Remember — you must be authenticated !

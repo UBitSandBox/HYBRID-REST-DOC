@@ -23,7 +23,7 @@ includes:
   - dispose_type
   - public_status
   - security_class
-  - errors
+  - status_code
 
 search: true
 ---
