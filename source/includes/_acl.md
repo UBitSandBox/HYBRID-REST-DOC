@@ -2,7 +2,7 @@
 ## ACL Object
 Name | Type | Description
 --------- | ----------- | -----------
-id | string | Id of the ACL
+id | integer | Id of the ACL
 aclName | string | German name of the ACL
 aclNameF | string | French name of the ACL
 aclNameI | string | Italian name of the ACL
