@@ -53,22 +53,22 @@ en:
       description: "This endpoint retrieves all ACL."
     getById:
       title: "Get ACL by its ID"
+      description: "This endpoint retrieves a specific ACL."
       table:
         id: "The ID of the ACL to retrieve"
-      description: "This endpoint retrieves a specific ACL."
     create:
       title: "Create an ACL"
       description: "This endpoint create an ACL."
     update:
       title: "Update an ACL"
+      description: "This endpoint update an ACL."
       table:
         id: "The ID of the ACL to update"
-      description: "This endpoint update an ACL."
     delete:
       title: "Delete an ACL"
+      description: "This endpoint delete an ACL."
       table:
         id: "The ID of the ACL to delete"
-      description: "This endpoint delete an ACL."
 
   acp:
     object: "ACP Object"
@@ -88,14 +88,47 @@ en:
   archive:
     deadlines:
       object: "Deadlines Object"
+
     deadlineCategory:
       objet: "Deadline category Object"
+
     dataSecurity:
-      objet: "Data security Object"
+      object:
+        title: "Data security Object"
+        table:
+          id: "Id of the data security"
+          title: "German title"
+          titleF: "French title"
+          titleI: "Italian title"
+          titleE: "English title"
+      getAll:
+        title: "Get all data security"
+        description: "This endpoint retrieves all data security."
+      getById:
+        title: "Get data security by its ID"
+        description: "This endpoint retrieves a specific data security."
+        table:
+          id: "The ID of the data security to retrieve"
+      create:
+        title: "Create a data security"
+        description: "This endpoint create a data security."
+      update:
+        title: "Update a data security"
+        description: "This endpoint update a data security."
+        table:
+          id: "The ID of the data security to update"
+      delete:
+        title: "Delete a data security"
+        description: "This endpoint delete a data security."
+        table:
+          id: "The ID of the data security to delete"
+
     disposeType:
       objet: "Dispose type Object"
+
     publicStatus:
       objet: "Public status Object"
+
     securityClass:
       objet: "Security class Object"
 
