@@ -1,0 +1,104 @@
+---
+fr:
+  ip: "127.0.0.1:9002"
+  title:
+    introduction: "Introduction"
+    authentication: "Authentification"
+    os: "OS"
+    acl: "ACL"
+    acp: "ACP"
+    ou: "OU"
+    users: "Users"
+    admins: "Admins"
+    roles: "Roles"
+    archive:
+      deadlines: "Archive/Deadlines"
+      deadlineCategory: "Archive/Deadline category"
+      dataSecurity: "Archive/Data security"
+      disposeType: "Archive/Dispose type"
+      publicStatus: "Archvie/Public status"
+      securityClass: "Archive/Security class"
+    statusCode: "Code d'état"
+
+  message:
+    remember: "N'oubliez pas - vous devez être authentifié !"
+    asterisk: "Les paramètres marqués d'un astérisque (*) sont obligatoires."
+    returnJson: "La commande ci-dessus renvoie un JSON structuré comme ceci:"
+    replaceToken: "Vous devez remplacer {ACCESS_TOKEN} par votre token personnel."
+
+  table:
+    name: "Nom"
+    type: "Type"
+    description: "Description"
+    parameter: "Paramètre"
+
+  os:
+    object: "Objet OS"
+
+  acl:
+    object:
+      title: "Objet ACL"
+      table:
+        id: "Id de l'ACL"
+        aclName: "Nom allemand"
+        aclNameF: "Nom français"
+        aclNameI: "Nom italien"
+        aclNameE: "Nom anglais"
+        aclDef: "TODO"
+        aclDefClosed: "TODO"
+        aclOnCreation: "TODO"
+        removeAdditionalRights: "TODO"
+    getAll:
+      title: "Obtenez tous les ACL"
+      description: "Ce endpoint récupère tous les ACL."
+    getById:
+      title: "Obtenez une ACL par son ID"
+      table:
+        id: "L'ID de l'ACL à récupérer"
+      description: "Ce endpoint récupère une ACL spécifique."
+    create:
+      title: "Créer une ACL"
+      description: "Ce endpoint crée ACL."
+    update:
+      title: "Mettre à jour une ACL"
+      table:
+        id: "L'ID de l'ACL à mettre à jour"
+      description: "Ce endpoint met à jour une ACL."
+    delete:
+      title: "Supprimer une ACL"
+      table:
+        id: "L'ID de l'ACL à supprimer"
+      description: "Ce endpoint supprime une ACL."
+
+  acp:
+    object: "Objet ACP"
+
+  ou:
+    object: "Objet OU"
+
+  users:
+    object: "Objet Users"
+
+  admins:
+    object: "Objet Admins"
+
+  roles:
+    object: "Objet Roles"
+
+  archive:
+    deadlines:
+      object: "Objet Deadlines"
+    deadlineCategory:
+      objet: "Objet Deadline category"
+    dataSecurity:
+      objet: "Objet Data security"
+    disposeType:
+      objet: "Objet Dispose type"
+    publicStatus:
+      objet: "Objet Public status"
+    securityClass:
+      objet: "Objet Security class"
+
+  httpRequest: "Requête HTTP"
+  urlParameters: "Paramètres URL"
+  bodyParameters: "Paramètres Body"

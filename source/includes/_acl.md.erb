@@ -1,0 +1,237 @@
+# <%= t('title.acl') %>
+## <%= t('acl.object.title') %>
+<%= t('table.name') %> | <%= t('table.type') %> | <%= t('table.description') %>
+--------- | ----------- | -----------
+id | integer | <%= t('acl.object.table.id') %>
+aclName | string | <%= t('acl.object.table.aclName') %>
+aclNameF | string | <%= t('acl.object.table.aclNameF') %>
+aclNameI | string | <%= t('acl.object.table.aclNameI') %>
+aclNameE | string | <%= t('acl.object.table.aclNameE') %>
+aclDef | string | <%= t('acl.object.table.aclDef') %>
+aclDefClosed | string | <%= t('acl.object.table.aclDefClosed') %>
+aclOnCreation | boolean | <%= t('acl.object.table.aclOnCreation') %>
+removeAdditionalRights | boolean | <%= t('acl.object.table.removeAdditionalRights') %> 
+
+## <%= t('acl.getAll.title') %>
+```shell
+curl --request GET \
+  --url http://<%= t('ip') %>/api/v1/ubit/acl \
+  --header "Authorization: Bearer {ACCESS_TOKEN}"
+```
+
+```javascript
+var request = require("request");
+
+var options = { method: 'GET',
+  url: 'http://<%= t('ip') %>/api/v1/ubit/acl',
+  headers: { 'Authorization': 'Bearer {ACCESS_TOKEN}'} 
+};
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
+```
+
+><%= t('message.replaceToken') %>
+
+><%= t('message.returnJson') %>
+
+```json
+[
+    {
+        "id": 1,
+        "aclName": "Offen",
+        "aclNameF": "Ouvert",
+        "aclNameI": null,
+        "aclNameE": null,
+        "aclDef": "ALL[U:MODIFY]",
+        "aclDefClosed": "ALL[U:READ]",
+        "aclOnCreation": true,
+        "removeAdditionalRights": false
+    },
+    {
+        "id": 2,
+        "aclName": "LEITER",
+        "aclNameF": "RESPONSABLE",
+        "aclNameI": null,
+        "aclNameE": null,
+        "aclDef": "THIS[L:MODIFY]",
+        "aclDefClosed": "THIS[L:READ]",
+        "aclOnCreation": true,
+        "removeAdditionalRights": false
+    }
+]
+```
+
+<%= t('acl.getAll.description') %>
+
+### <%= t('httpRequest') %>
+
+`GET http://<%= t('ip') %>/api/v1/ubit/acl`
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+## <%= t('acl.getById.title') %>
+
+```shell
+curl --request GET \
+  --url http://<%= t('ip') %>/api/v1/ubit/acl/1 \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+```javascript
+var request = require("request");
+
+var options = { method: 'GET',
+  url: 'http://<%= t('ip') %>/api/v1/ubit/acl/1',
+  headers: { Authorization: 'Bearer {ACCESS_TOKEN}' } 
+};
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
+```
+
+><%= t('message.replaceToken') %>
+
+><%= t('message.returnJson') %>
+
+```json
+{
+    "id": 1,
+    "aclName": "Offen",
+    "aclNameF": "Ouvert",
+    "aclNameI": null,
+    "aclNameE": null,
+    "aclDef": "ALL[U:MODIFY]",
+    "aclDefClosed": "ALL[U:READ]",
+    "aclOnCreation": true,
+    "removeAdditionalRights": false
+}
+```
+
+<%= t('acl.getById.description') %>
+
+### <%= t('httpRequest') %>
+
+`GET http://<%= t('ip') %>/api/v1/ubit/acl/<ID>`
+
+### <%= t('urlParameters') %>
+
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('acl.getById.table.id') %>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+## <%= t('acl.create.title') %>
+```shell
+curl --request POST \
+  --url http://<%= t('ip') %>/api/v1/ubit/acl/ \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}' \
+  --data '{"aclName": "Offen","aclDef": "ALL[U:MODIFY]","aclDefClosed": "ALL[U:READ]","aclOnCreation": true,"removeAdditionalRights": false}'
+```
+
+```javascript
+```
+
+><%= t('message.replaceToken') %>
+
+<%= t('acl.create.description') %>
+
+### <%= t('httpRequest') %>
+
+`POST http://<%= t('ip') %>/api/v1/ubit/acl/`
+
+### <%= t('bodyParameters') %>
+
+<%= t('table.parameter') %> | <%= t('table.type') %> | <%= t('table.description') %>
+--------- | ----------- | -----------
+aclName * | string | <%= t('acl.object.table.aclName') %>
+aclNameF | string | <%= t('acl.object.table.aclNameF') %>
+aclNameI | string | <%= t('acl.object.table.aclNameI') %>
+aclNameE | string | <%= t('acl.object.table.aclNameE') %>
+aclDef * | string | <%= t('acl.object.table.aclDef') %>
+aclDefClosed * | string | <%= t('acl.object.table.aclDefClosed') %>
+aclOnCreation * | boolean | <%= t('acl.object.table.aclOnCreation') %>
+removeAdditionalRights * | boolean | <%= t('acl.object.table.removeAdditionalRights') %> 
+
+<aside class="notice">
+<%= t('message.asterisk') %>
+</aside>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+## <%= t('acl.update.title') %>
+```shell
+curl --request PUT \
+  --url http://<%= t('ip') %>/api/v1/ubit/acl/1 \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}' \
+  --data '{"aclNameF": "Ouvert","aclNameI": "Aperto","aclNameE": "Open"}'
+```
+
+```javascript
+```
+
+><%= t('message.replaceToken') %>
+
+<%= t('acl.update.description') %>
+
+### <%= t('httpRequest') %>
+`PUT http://<%= t('ip') %>/api/v1/ubit/acl/<ID>`
+
+### <%= t('urlParameters') %>
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('acl.update.table.id') %> 
+
+### <%= t('bodyParameters') %>
+<%= t('table.parameter') %> | <%= t('table.type') %> | <%= t('table.description') %>
+--------- | ----------- | -----------
+aclName | string | <%= t('acl.object.table.aclName') %>
+aclNameF | string | <%= t('acl.object.table.aclNameF') %>
+aclNameI | string | <%= t('acl.object.table.aclNameI') %>
+aclNameE | string | <%= t('acl.object.table.aclNameE') %>
+aclDef | string | <%= t('acl.object.table.aclDef') %>
+aclDefClosed | string | <%= t('acl.object.table.aclDefClosed') %>
+aclOnCreation | boolean | <%= t('acl.object.table.aclOnCreation') %>
+removeAdditionalRights | boolean | <%= t('acl.object.table.removeAdditionalRights') %> 
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+## <%= t('acl.delete.title') %>
+```shell
+curl --request DELETE \
+  --url http://<%= t('ip') %>/api/v1/ubit/acl/1 \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+```javascript
+```
+><%= t('message.replaceToken') %>
+
+<%= t('acl.delete.description') %>
+
+### <%= t('httpRequest') %>
+`DELETE http://<%= t('ip') %>/api/v1/ubit/acl/<ID>`
+
+### <%= t('urlParameters') %>
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('acl.delete.table.id') %> 
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
