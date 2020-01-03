@@ -1,0 +1,225 @@
+# <%= t('title.ou') %>
+## OU Object
+Name | Type | Description
+--------- | ----------- | -----------
+id | integer | The id of the OU
+shortName | string | The short name of the OU
+idParent | integer | The id of the OU parent
+fullName | string | The german full name of the OU
+fullNameF | string | The french full name of the OU
+fullNameI | string | The italian full name of the OU
+fullNameE | string | The english full name of the OU
+adGroupUsers | string |  TODO
+adGroupHeads | string | TODO
+adGroupRegs | string | TODO
+adDomain | string | TODO
+
+
+## Get all OU
+```shell
+curl --request GET \
+  --url http://127.0.0.1:9002/api/v1/ubit/ou \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+```javascript
+```
+
+>You must replace `{ACCESS_TOKEN}` with your personal token.
+
+>The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "id": 1,
+    "idParent": 1,
+    "fullName": "Alle Mitarbeiter des BD-GS",
+    "fullNameF": null,
+    "fullNameI": null,
+    "fullNameE": null,
+    "shortName": "ALL",
+    "adGroupUsers": "ULF-ALL",
+    "adGroupRegs": "ULF-REG",
+    "adGroupHeads": "ULF-HEAD",
+    "isActive":true,
+    "adDomain": "UBIT"
+  },
+  {
+    "id": 2,
+    "idParent": 1,
+    "fullName": "Geschäftsleitung 2",
+    "fullNameF": "Direction",
+    "fullNameI": "Leitung Baudepartement",
+    "fullNameE": "Board8",
+    "shortName": "GL7",
+    "adGroupUsers": "ULF-DIR",
+    "adGroupRegs": "ULF-REG",
+    "adGroupHeads": "ULF-HEAD",
+    "isActive": true,
+    "adDomain": "UBIT"
+  }
+]
+```
+
+This endpoint retrieves all OU
+
+### HTTP Request
+
+`GET http://127.0.0.1:9002/api/v1/ubit/ou`
+
+<aside class="success">
+Remember — you must be authenticated !
+</aside>
+
+## Get OU by its ID
+
+```shell
+curl --request GET \
+  --url http://127.0.0.1:9002/api/v1/ubit/ou/1 \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+```javascript
+```
+
+>You must replace `{ACCESS_TOKEN}` with your personal token.
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "id": 1,
+    "idParent": 1,
+    "fullName": "Alle Mitarbeiter des BD-GS",
+    "fullNameF": null,
+    "fullNameI": null,
+    "fullNameE": null,
+    "shortName": "ALL",
+    "adGroupUsers": "ULF-ALL",
+    "adGroupRegs": "ULF-REG",
+    "adGroupHeads": "ULF-HEAD",
+    "isActive":true,
+    "adDomain": "UBIT"
+}
+```
+
+This endpoint retrieves a specific OU.
+
+### HTTP Request
+`GET http://127.0.0.1:9002/api/v1/ubit/ou/<ID>`
+
+### URL Parameters
+Parameter | Description
+--------- | -----------
+ID | The ID of the OU to retrieve
+
+<aside class="success">
+Remember — you must be authenticated !
+</aside>
+
+## Create a OU
+```shell
+curl --request POST \
+  --url http://127.0.0.1:9002/api/v1/ubit/ou/ \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}' \
+  --data '{"shorName":"R&D", "idParent":2, "fullName":"Forschung & Entwicklung", "addGroupUsers":"ULF-RND", "adGroupHeads":"ULF-HEAD", "adGroupRegs":"ULF-REG", "adDomain":"UBIT"}'
+```
+
+```javascript
+```
+
+>You must replace `{ACCESS_TOKEN}` with your personal token.
+
+This endpoint create a OU.
+
+### HTTP Request
+`POST http://127.0.0.1:9002/api/v1/ubit/ou/`
+
+### Body Parameters
+Parameter | Type | Description
+--------- | ----------- | -----------
+shortName * | string | The short name of the OU
+idParent * | integer | The id of the OU parent
+fullName * | string | The german full name of the OU
+fullNameF | string | The french full name of the OU
+fullNameI | string | The italian full name of the OU
+fullNameE | string | The english full name of the OU
+adGroupUsers * | string |  TODO
+adGroupHeads * | string | TODO
+adGroupRegs * | string | TODO
+adDomain * | string | TODO
+
+<aside class="notice">
+Parameters marked with an asterisk (*) are mandatory.
+</aside>
+
+<aside class="success">
+Remember — you must be authenticated !
+</aside>
+
+## Update a OU
+```shell
+curl --request PUT \
+  --url http://127.0.0.1:9002/api/v1/ubit/ou/3 \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}' \
+  --data '{"fullNameF": "Recherche et développement"}'
+```
+
+```javascript
+```
+
+>You must replace `{ACCESS_TOKEN}` with your personal token.
+
+This endpoint update a OU.
+
+### HTTP Request
+`PUT http://127.0.0.1:9002/api/v1/ubit/ou/<ID>`
+
+### URL Parameters
+Parameter | Description
+--------- | -----------
+ID | The ID of the OU to update
+
+### Body Parameters
+Parameter | Type | Description
+--------- | ----------- | -----------
+shortName | string | The short name of the OU
+idParent | integer | The id of the OU parent
+fullName | string | The german full name of the OU
+fullNameF | string | The french full name of the OU
+fullNameI | string | The italian full name of the OU
+fullNameE | string | The english full name of the OU
+adGroupUsers | string |  TODO
+adGroupHeads | string | TODO
+adGroupRegs | string | TODO
+adDomain | string | TODO
+
+<aside class="success">
+Remember — you must be authenticated !
+</aside>
+
+## Delete a OU
+```shell
+curl --request DELETE \
+  --url http://127.0.0.1:9002/api/v1/ubit/ou/1 \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+```javascript
+```
+>You must replace `{ACCESS_TOKEN}` with your personal token.
+
+This endpoint delete a OU.
+
+### HTTP Request
+`DELETE http://127.0.0.1:9002/api/v1/ubit/ou/<ID>`
+
+### URL Parameters
+Parameter | Description
+--------- | -----------
+ID | The ID of the OU to delete
+
+<aside class="success">
+Remember — you must be authenticated !
+</aside>

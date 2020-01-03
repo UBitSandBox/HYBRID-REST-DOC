@@ -1,0 +1,185 @@
+# <%= t('title.archive.dataSecurity') %>
+## <%= t('archive.dataSecurity.object.title') %>
+<%= t('table.name') %> | <%= t('table.type') %> | <%= t('table.description') %>
+--------- | ----------- | -----------
+id | integer |  <%= t('archive.dataSecurity.object.table.id') %>
+title | string | <%= t('archive.dataSecurity.object.table.title') %>
+titleF | string | <%= t('archive.dataSecurity.object.table.titleF') %>
+titleI | string | <%= t('archive.dataSecurity.object.table.titleI') %>
+titleE | string | <%= t('archive.dataSecurity.object.table.titleE') %>
+
+## <%= t('archive.dataSecurity.getAll.title') %>
+```shell
+curl --request GET \
+  --url http://<%= t('ip') %>/api/v1/ubit/archive/data_securities \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+```javascript
+```
+
+><%= t('message.replaceToken') %>
+
+><%= t('message.returnJson') %>
+
+```json
+[
+    {
+        "id": 1,
+        "title": "Keine Personendaten",
+        "titleF": "Pas de données personnelles",
+        "titleI": "Senza dati personali",
+        "titleE": "No personal data"
+    },
+    {
+        "id": 2,
+        "title": "Personendaten",
+        "titleF": "Données personnelles",
+        "titleI": "Dati personali",
+        "titleE": "Personal data"
+    }
+]
+```
+
+<%= t('archive.dataSecurity.getAll.description') %>
+
+### <%= t('httpRequest') %>
+
+`GET http://<%= t('ip') %>/api/v1/ubit/archive/data_securities`
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+## <%= t('archive.dataSecurity.getById.title') %>
+
+```shell
+curl --request GET \
+  --url http://<%= t('ip') %>/api/v1/ubit/archive/data_securities/1 \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+```javascript
+```
+
+><%= t('message.replaceToken') %>
+
+><%= t('message.returnJson') %>
+
+```json
+{
+    "id": 1,
+    "title": "Keine Personendaten",
+    "titleF": "Pas de données personnelles",
+    "titleI": "Senza dati personali",
+    "titleE": "No personal data"
+}
+```
+
+<%= t('archive.dataSecurity.getById.description') %>
+
+### <%= t('httpRequest') %>
+`GET http://<%= t('ip') %>/api/v1/ubit/archive/data_securities/<ID>`
+
+### <%= t('urlParameters') %>
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('archive.dataSecurity.getById.table.id') %>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+## <%= t('archive.dataSecurity.create.title') %>
+```shell
+curl --request POST \
+  --url http://<%= t('ip') %>/api/v1/ubit/archive/data_securities/ \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}' \
+  --data '{"title": "Personendaten, deren Missbrauch für den Betroffenen Gefahren für Leib und Leben bedeuten"}'
+```
+
+```javascript
+```
+
+><%= t('message.replaceToken') %>
+
+<%= t('archive.dataSecurity.create.description') %>
+
+### <%= t('httpRequest') %>
+`POST http://<%= t('ip') %>/api/v1/ubit/archive/data_securities/`
+
+### <%= t('bodyParameters') %>
+<%= t('table.parameter') %> | <%= t('table.type') %> | <%= t('table.description') %>
+--------- | ----------- | -----------
+title * | string | <%= t('archive.dataSecurity.object.table.title') %>
+titleF | string | <%= t('archive.dataSecurity.object.table.titleF') %>
+titleI | string | <%= t('archive.dataSecurity.object.table.titleI') %>
+titleE | string | <%= t('archive.dataSecurity.object.table.titleE') %>
+
+<aside class="notice">
+<%= t('message.asterisk') %>
+</aside>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+## <%= t('archive.dataSecurity.update.title') %>
+```shell
+curl --request PUT \
+  --url http://<%= t('ip') %>/api/v1/ubit/archive/data_securities/3 \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}' \
+  --data '{"titleF": "Données personnelles dont l\'utilisation frauduleuse entraîne un danger pour la personne concernée"}'
+```
+
+```javascript
+```
+
+><%= t('message.replaceToken') %>
+
+<%= t('archive.dataSecurity.update.description') %>
+
+### <%= t('httpRequest') %>
+`PUT http://<%= t('ip') %>/api/v1/ubit/archive/data_securities/<ID>`
+
+### <%= t('urlParameters') %>
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('archive.dataSecurity.update.table.id') %>
+
+### <%= t('bodyParameters') %>
+<%= t('table.parameter') %> | <%= t('table.type') %> | <%= t('table.description') %>
+--------- | ----------- | -----------
+title | string | <%= t('archive.dataSecurity.object.table.title') %>
+titleF | string | <%= t('archive.dataSecurity.object.table.titleF') %>
+titleI | string | <%= t('archive.dataSecurity.object.table.titleI') %>
+titleE | string | <%= t('archive.dataSecurity.object.table.titleE') %>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+## <%= t('archive.dataSecurity.delete.title') %>
+```shell
+curl --request DELETE \
+  --url http://<%= t('ip') %>/api/v1/ubit/archive/data_securities/1 \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+```javascript
+```
+><%= t('message.replaceToken') %>
+
+<%= t('archive.dataSecurity.delete.description') %>
+
+### <%= t('httpRequest') %>
+`DELETE http://<%= t('ip') %>/api/v1/ubit/archive/data_securities/<ID>`
+
+### <%= t('urlParameters') %>
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('archive.dataSecurity.delete.table.id') %>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>

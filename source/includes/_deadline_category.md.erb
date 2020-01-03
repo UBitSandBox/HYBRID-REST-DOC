@@ -1,0 +1,210 @@
+# <%= t('title.archive.deadlineCategory') %>
+## <%= t('archive.deadlineCategory.object.title') %>
+<%= t('table.name') %> | <%= t('table.type') %> | <%= t('table.description') %>
+--------- | ----------- | -----------
+id | integer | <%= t('archive.deadlineCategory.object.table.id') %>
+title | string | <%= t('archive.deadlineCategory.object.table.title') %>
+titleF | string | <%= t('archive.deadlineCategory.object.table.titleF') %>
+titleI | string | <%= t('archive.deadlineCategory.object.table.titleI') %>
+titleE | string | <%= t('archive.deadlineCategory.object.table.titleE') %>
+desc | string | <%= t('archive.deadlineCategory.object.table.desc') %>
+descF | string | <%= t('archive.deadlineCategory.object.table.descF') %>
+descI | string | <%= t('archive.deadlineCategory.object.table.descI') %>
+descE | string | <%= t('archive.deadlineCategory.object.table.descE') %>
+
+## <%= t('archive.deadlineCategory.getAll.title') %>
+
+```shell
+curl --request GET \
+  --url http://<%= t('ip') %>/api/v1/ubit/archive/deadline_categories \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+```javascript
+```
+
+><%= t('message.replaceToken') %>
+
+><%= t('message.returnJson') %>
+
+```json
+[
+    {
+        "id": 1,
+        "title": "Art. 9. Abs. 1 [BGA]",
+        "titleF": "Art. 9, al. 1 [LAr]",
+        "titleI": "Art. 9. cpv. 1 [LAr]",
+        "titleE": "Art. 9. Abs. 1 [BGA]",
+        "desc": "Das Archivgut des Bundes...",
+        "descF": "Les archives de la Confédération...",
+        "descI": "Gli archivi della Confederazione...",
+        "descE": "The archive records of the Confederation..."
+    },
+    {
+        "id":2,
+        "title":"Art. 9. Abs. 2 [BGA]",
+        "titleF":"Art. 9, al. 2 [LAr]",
+        "titleI":"Art. 9. cpv. 2 [LAr]",
+        "titleE":"Art. 9. Abs. 2 [BGA]",
+        "desc":"Unterlagen, welche bereits vor ihrer Ablieferung an das Bundesarchiv öffentlich zugänglich waren, bleiben auch weiterhin öffentlich zugänglich.",
+        "descF":"Les documents consultables par le public avant d'être versés aux Archives fédérales le restent par la suite.",
+        "descI":"I documenti che erano accessibili al pubblico già prima del loro versamento all'Archivio federale lo restano anche in seguito.",
+        "descE":"Documents that were accessible to the public before their delivery to the Federal Archives remain accessible to the public."
+    }
+]
+```
+
+<%= t('archive.deadlineCategory.getAll.description') %>
+
+### <%= t('httpRequest') %>
+
+`GET http://<%= t('ip') %>/api/v1/ubit/archive/deadline_categories`
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+## <%= t('archive.deadlineCategory.getById.title') %>
+
+```shell
+curl --request GET \
+  --url http://<%= t('ip') %>/api/v1/ubit/archive/deadline_categories/1 \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+```javascript
+```
+
+><%= t('message.replaceToken') %>
+
+><%= t('message.returnJson') %>
+
+```json
+{
+    "id": 1,
+    "title": "Art. 9. Abs. 1 [BGA]",
+    "titleF": "Art. 9, al. 1 [LAr]",
+    "titleI": "Art. 9. cpv. 1 [LAr]",
+    "titleE": "Art. 9. Abs. 1 [BGA]",
+    "desc": "Das Archivgut des Bundes...",
+    "descF": "Les archives de la Confédération...",
+    "descI": "Gli archivi della Confederazione...",
+    "descE": "The archive records of the Confederation..."
+}
+```
+
+<%= t('archive.deadlineCategory.getById.description') %>
+
+### <%= t('httpRequest') %>
+`GET http://<%= t('ip') %>/api/v1/ubit/archive/deadline_categories/<ID>`
+
+### <%= t('urlParameters') %>
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('archive.deadlineCategory.getById.table.id') %>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+## <%= t('archive.deadlineCategory.create.title') %>
+```shell
+curl --request POST \
+  --url http://<%= t('ip') %>/api/v1/ubit/archive/deadline_categories/ \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}' \
+  --data '{"title": "Art. 11. Abs. 1 [BGA]", "desc": "Archivgut, das nach Personennamen erschlossen ist und besonders schützenswerte Personendaten oder Persönlichkeitsprofile enthält, unterliegt einer Schutzfrist von 50 Jahren, es sei denn, die betroffene Person habe einer Einsichtnahme zugestimmt"}'
+```
+
+```javascript
+```
+
+><%= t('message.replaceToken') %>
+
+<%= t('archive.deadlineCategory.create.description') %>
+
+### <%= t('httpRequest') %>
+`POST http://<%= t('ip') %>/api/v1/ubit/archive/deadline_categories/`
+
+### <%= t('bodyParameters') %>
+<%= t('table.parameter') %> | <%= t('table.type') %> | <%= t('table.description') %>
+--------- | ----------- | -----------
+title *| string | <%= t('archive.deadlineCategory.object.table.title') %>
+titleF | string | <%= t('archive.deadlineCategory.object.table.titleF') %>
+titleI | string | <%= t('archive.deadlineCategory.object.table.titleI') %>
+titleE | string | <%= t('archive.deadlineCategory.object.table.titleE') %>
+desc * | string | <%= t('archive.deadlineCategory.object.table.desc') %>
+descF | string | <%= t('archive.deadlineCategory.object.table.descF') %>
+descI | string | <%= t('archive.deadlineCategory.object.table.descI') %>
+descE | string | <%= t('archive.deadlineCategory.object.table.descE') %>
+
+<aside class="notice">
+<%= t('message.asterisk') %>
+</aside>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+## <%= t('archive.deadlineCategory.update.title') %>
+```shell
+curl --request PUT \
+  --url http://<%= t('ip') %>/api/v1/ubit/archive/deadline_categories/1 \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}' \
+  --data '{"titleF": "Art. 11, al. 1 [LAr]","descF": "Les archives classées selon des noms de personnes et contenant des données personnelles sensibles ou des profils de la personnalité sont soumises à un délai de protection de 50 ans à moins que la personne concernée n'en ait autorisé la consultation."}'
+```
+
+```javascript
+```
+
+><%= t('message.replaceToken') %>
+
+<%= t('archive.deadlineCategory.update.description') %>
+
+### <%= t('httpRequest') %>
+`PUT http://<%= t('ip') %>/api/v1/ubit/archive/deadline_categories/<ID>`
+
+### <%= t('urlParameters') %>
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('archive.deadlineCategory.update.table.id') %>
+
+### <%= t('bodyParameters') %>
+<%= t('table.parameter') %> | <%= t('table.type') %> | <%= t('table.description') %>
+--------- | ----------- | -----------
+title | string | <%= t('archive.deadlineCategory.object.table.title') %>
+titleF | string | <%= t('archive.deadlineCategory.object.table.titleF') %>
+titleI | string | <%= t('archive.deadlineCategory.object.table.titleI') %>
+titleE | string | <%= t('archive.deadlineCategory.object.table.titleE') %>
+desc | string | <%= t('archive.deadlineCategory.object.table.desc') %>
+descF | string | <%= t('archive.deadlineCategory.object.table.descF') %>
+descI | string | <%= t('archive.deadlineCategory.object.table.descI') %>
+descE | string | <%= t('archive.deadlineCategory.object.table.descE') %>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+## <%= t('archive.deadlineCategory.delete.title') %>
+```shell
+curl --request DELETE \
+  --url http://<%= t('ip') %>/api/v1/ubit/archive/deadline_categories/1 \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+```javascript
+```
+><%= t('message.replaceToken') %>
+
+<%= t('archive.deadlineCategory.delete.description') %>
+
+### <%= t('httpRequest') %>
+`DELETE http://<%= t('ip') %>/api/v1/ubit/archive/deadline_categories/<ID>`
+
+### <%= t('urlParameters') %>
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('archive.deadlineCategory.delete.table.id') %>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>

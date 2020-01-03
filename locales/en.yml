@@ -90,7 +90,39 @@ en:
       object: "Deadlines Object"
 
     deadlineCategory:
-      objet: "Deadline category Object"
+      object:
+        title: "Deadline category Object"
+        table:
+          id: "Id of the deadline category"
+          title: "German title"
+          titleF: "French title"
+          titleI: "Italian title"
+          titleE: "English title"
+          desc: "German description"
+          descF: "French description"
+          descI: "Italian description"
+          descE: "English description"
+      getAll:
+        title: "Get all deadline category"
+        description: "This endpoint retrieves all deadline category."
+      getById:
+        title: "Get data security by its ID"
+        description: "This endpoint retrieves a specific deadline category."
+        table:
+          id: "The ID of the deadline category to retrieve"
+      create:
+        title: "Create a deadline category"
+        description: "This endpoint create a deadline category."
+      update:
+        title: "Update a data security"
+        description: "This endpoint update a deadline category."
+        table:
+          id: "The ID of the deadline category to update."
+      delete:
+        title: "Delete a deadline category"
+        description: "This endpoint delete a deadline category."
+        table:
+          id: "The ID of the deadline category to delete"
 
     dataSecurity:
       object:
