@@ -34,7 +34,8 @@ en:
 
   os:
     title: "OS"
-    object: "OS Object"
+    object:
+      title: "OS Object"
 
   acl:
     title: "ACL"
