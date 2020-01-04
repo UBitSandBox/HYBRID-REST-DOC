@@ -74,7 +74,41 @@ en:
     object: "ACP Object"
 
   ou:
-    object: "OU Object"
+    object:
+      title: "OU Object"
+      table:
+        id: "Id of the OU"
+        shortName: "The short name of the OU"
+        idParent: "The id of the OU parent"
+        fullName: "The german full name of the OU"
+        fullNameF: "The french full name of the OU"
+        fullNameI: "The italian full name of the OU"
+        fullNameE: "The english full name of the OU"
+        adGroupUsers: "TODO"
+        adGroupHeads: "TODO"
+        adGroupRegs: "TODO"
+        adDomain: "TODO"
+    getAll:
+      title: "Get all OU"
+      description: "This endpoint retrieves all OU."
+    getById:
+      title: "Get OU by its ID"
+      description: "This endpoint retrieves a specific OU."
+      table:
+        id: "The ID of the OU to retrieve"
+    create:
+      title: "Create an OU"
+      description: "This endpoint create an OU."
+    update:
+      title: "Update an OU"
+      description: "This endpoint update an OU."
+      table:
+        id: "The ID of the OU to update"
+    delete:
+      title: "Delete an OU"
+      description: "This endpoint delete an OU."
+      table:
+        id: "The ID of the OU to delete"
 
   users:
     object: "Users Object"
@@ -159,7 +193,35 @@ en:
       objet: "Dispose type Object"
 
     publicStatus:
-      objet: "Public status Object"
+      object:
+        title: "Public status Object"
+        table:
+          id: "Id of the public status"
+          title: "German title"
+          titleF: "French title"
+          titleI: "Italian title"
+          titleE: "English title"
+      getAll:
+        title: "Get all Public status"
+        description: "This endpoint retrieves all public status."
+      getById:
+        title: "Get public status by its ID"
+        description: "This endpoint retrieves a specific public status."
+        table:
+          id: "The ID of the public status to retrieve"
+      create:
+        title: "Create a public status"
+        description: "This endpoint create a public status."
+      update:
+        title: "Update a public status"
+        description: "This endpoint update a public status."
+        table:
+          id: "The ID of the public status to update"
+      delete:
+        title: "Delete a public status"
+        description: "This endpoint delete a public status."
+        table:
+          id: "The ID of the public status to delete"
 
     securityClass:
       objet: "Security class Object"
