@@ -1,10 +1,25 @@
 ---
 fr:
   ip: "127.0.0.1:9002"
-  introduction: "Introduction"
-  authentication: "Authentification"
+
+  introduction:
+    title: "Introduction"
+    description:
+      p1: "Bienvenue dans l'API HYBRID-REST! Vous pouvez utiliser notre API pour accéder aux endpoints de l'API HYBRID-REST, qui peuvent obtenir des informations depuis le plan de classement."
+      p2: "Vous pouvez afficher des exemples de code dans la zone foncé à droite et vous pouvez changer le langage de programmation des exemples avec les onglets en haut à droite."
+
+  authentication:
+    title: "Authentification"
+    description:
+      p1: "Lors de toute requête à l'API HYBRID-REST, vous devrez inclure votre token généré à l'aide de la Master Key dans un en-tête qui ressemble à ce qui suit:"
+    message:
+      replace1: "Vous devez remplacer"
+      replace2: "avec votre token personnel."
 
   message:
+    authorize: "Pour autoriser, utilisez ce code:"
+    base64: "Vous devez remplacer {BASE64} par votre nom d'utilisateur et votre mot de passe codés en base64."
+    master: "Vous devez remplacer {MASTER_KEY} par la Master Key"
     remember: "N'oubliez pas - vous devez être authentifié !"
     asterisk: "Les paramètres marqués d'un astérisque (*) sont obligatoires."
     returnJson: "La commande ci-dessus renvoie un JSON structuré comme ceci:"
@@ -390,3 +405,7 @@ fr:
           meaning: "Meaning"
         data:
           internalServerError: "Internal Server Error -- Le serveur a rencontré une situation qu’il ne sait pas traiter."
+
+  footer:
+    github: "HYBRID-REST sur GitHub"
+    slate: "Documentation propulsé par Slate"

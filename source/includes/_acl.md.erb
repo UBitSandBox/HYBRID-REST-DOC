@@ -19,7 +19,7 @@ curl --request GET \
   --header "Authorization: Bearer {ACCESS_TOKEN}"
 ```
 
-```javascript
+```javascript--node--node
 var request = require("request");
 
 var options = { method: 'GET',
@@ -83,7 +83,7 @@ curl --request GET \
   --header 'Authorization: Bearer {ACCESS_TOKEN}'
 ```
 
-```javascript
+```javascript--node
 var request = require("request");
 
 var options = { method: 'GET',
@@ -140,7 +140,7 @@ curl --request POST \
   --data '{"aclName": "Offen","aclDef": "ALL[U:MODIFY]","aclDefClosed": "ALL[U:READ]","aclOnCreation": true,"removeAdditionalRights": false}'
 ```
 
-```javascript
+```javascript--node
 ```
 
 ><%= t('message.replaceToken') %>
@@ -179,7 +179,7 @@ curl --request PUT \
   --data '{"aclNameF": "Ouvert","aclNameI": "Aperto","aclNameE": "Open"}'
 ```
 
-```javascript
+```javascript--node
 ```
 
 ><%= t('message.replaceToken') %>
@@ -217,7 +217,7 @@ curl --request DELETE \
   --header 'Authorization: Bearer {ACCESS_TOKEN}'
 ```
 
-```javascript
+```javascript--node
 ```
 ><%= t('message.replaceToken') %>
 

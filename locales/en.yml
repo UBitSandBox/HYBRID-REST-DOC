@@ -1,10 +1,26 @@
 ---
 en:
+  title: "HYBRID-REST"
   ip: "127.0.0.1:9002"
-  introduction: "Introduction"
-  authentication: "Authentication"
+
+  introduction:
+    title: "Introduction"
+    description:
+      p1: "Welcome to the HYBRID-REST API! You can use our API to access HYBRID-REST API endpoints, which can get information for Lightweight Classification System."
+      p2: "You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right."
+
+  authentication:
+    title: "Authentication"
+    description:
+      p1: "When making any API request to HYBRID-REST, you will need to include your token that was generated using the master key in a header that looks like the following:"
+    message:
+      replace1: "You must replace"
+      replace2: "with your personal token."
 
   message:
+    authorize: "To authorize, use this code:"
+    base64: "You must replace {BASE64} with your username and password in base64 encoded."
+    master: "Your must replace {MASTER_KEY} with the Master Key."
     remember: "Remember — you must be authenticated !"
     asterisk: "Parameters marked with an asterisk (*) are mandatory."
     returnJson : "The above command returns JSON structured like this:"
@@ -389,3 +405,7 @@ en:
           meaning: "Meaning"
         data:
           internalServerError: "Internal Server Error -- A generic error message, given when an unexpected condition was encountered and no more specific message is suitable."
+
+  footer:
+    github: "HYBRID-REST on GitHub"
+    slate: "Documentation Powered by Slate"

@@ -1,14 +1,14 @@
 ---
-title: HYBRID-REST
+title: t('title')
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - javascript
+  - shell: cURL
+  - javascript--node: node.js
 
 toc_footers:
-  - <a href='https://github.com/UBitSandBox/HYBRID-REST' target="_blank">HYBRID-REST on GitHub</a>
-  - <a href='https://github.com/lord/slate' target="_blank">Documentation Powered by Slate</a>
-  - <p> <a href='/'>En</a> - <a href='/fr'>Fr</a></p>
+  - <a href='https://github.com/UBitSandBox/HYBRID-REST' target="_blank">t('footer.github')</a>
+  - <a href='https://github.com/lord/slate' target="_blank">t('footer.slate')</a>
+  - <p> <a href='/'>EN</a> - <a href='/fr'>FR</a></p>
 
 includes:
   - os.md.erb
@@ -29,13 +29,13 @@ includes:
 search: true
 ---
 
-# <%= t('introduction') %>
-Welcome to the HYBRID-REST API! You can use our API to access HYBRID-REST API endpoints, which can get information for Lightweight Classification System
+# <%= t('introduction.title') %>
+<%= t('introduction.description.p1') %>
 
-You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+<%= t('introduction.description.p2') %>
 
-# <%= t('authentication') %>
-> To authorize, use this code:
+# <%= t('authentication.title') %>
+> <%= t('message.authorize') %>
 
 ```shell
 curl --request POST \
@@ -44,16 +44,16 @@ curl --request POST \
   --data '{"access_token":{MASTER_KEY}}'
 ```
 
-```javascript
+```javascript--node
 ````
-> You must replace `{BASE64}` with your username and password in base64 encoded.
+> <%= t('message.base64') %>
 >
-> Your muste replace `{MASTER_KEY}` with your Master Key.
+> <%= t('message.master') %>
 
-When making any API request to HYBRID-REST, you will need to include your token that was generated using the master key in a header that looks like the following:
+<%= t('authentication.description.p1') %>
 
 `Authorization: Basic eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTc3NzAzOTU5fQ.HEI6m7Twef5CKa-UMjhFoBSdIpgfMa4LKWVX-0vWf-I"`
 
 <aside class="notice">
-You must replace <code>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTc3NzAzOTU5fQ.HEI6m7Twef5CKa-UMjhFoBSdIpgfMa4LKWVX-0vWf-I"</code> with your personal token.
+<%= t('authentication.message.replace1') %> <code>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTc3NzAzOTU5fQ.HEI6m7Twef5CKa-UMjhFoBSdIpgfMa4LKWVX-0vWf-I"</code> <%= t('authentication.message.replace2') %>
 </aside>
