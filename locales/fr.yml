@@ -224,7 +224,35 @@ fr:
           id: "L'ID du statut public à supprimer"
 
     securityClass:
-      objet: "Security class Object"
+      object:
+        title: "Objet classe de sécurité"
+        table:
+          id: "Id de la classe de sécurité"
+          title: "Titre allemand"
+          titleF: "Titre français"
+          titleI: "Titre italien"
+          titleE: "Titre anglais"
+      getAll:
+        title: "Obtenir toutes les classes de sécurité"
+        description: "Ce endpoint récupère toutes classe de sécurité."
+      getById:
+        title: "Obtenir une classe de sécurité son ID"
+        description: "Ce endpoint récupère une classe de sécurité spécifique."
+        table:
+          id: "L'ID de la classe de sécurité à récupérer"
+      create:
+        title: "Créer une classe de sécurité"
+        description: "Ce endpoint crée une classe de sécurité."
+      update:
+        title: "Mettre à jour une classe de sécurité"
+        description: "Ce endpoint met à jour une classe de sécurité."
+        table:
+          id: "L'ID de la classe de sécurité à mettre à jour"
+      delete:
+        title: "Supprimer une classe de sécurité"
+        description: "Ce endpoint supprime une classe de sécurité."
+        table:
+          id: "L'ID de la classe de sécurité à supprimer"
 
   httpRequest: "Requête HTTP"
   urlParameters: "Paramètres URL"

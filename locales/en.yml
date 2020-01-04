@@ -224,7 +224,35 @@ en:
           id: "The ID of the public status to delete"
 
     securityClass:
-      objet: "Security class Object"
+      object:
+        title: "Security class Object"
+        table:
+          id: "Id of the security class"
+          title: "German title"
+          titleF: "French title"
+          titleI: "Italian title"
+          titleE: "English title"
+      getAll:
+        title: "Get all security class"
+        description: "This endpoint retrieves all security class."
+      getById:
+        title: "Get security class by its ID"
+        description: "This endpoint retrieves a specific security class."
+        table:
+          id: "The ID of the security class to retrieve"
+      create:
+        title: "Create a security class"
+        description: "This endpoint create a security class."
+      update:
+        title: "Update a security class"
+        description: "This endpoint update a security class."
+        table:
+          id: "The ID of the security class to update"
+      delete:
+        title: "Delete a security class"
+        description: "This endpoint delete a security class."
+        table:
+          id: "The ID of the security class to delete"
 
   httpRequest: "HTTP Request"
   urlParameters: "URL Parameters"
