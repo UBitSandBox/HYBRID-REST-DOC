@@ -59,7 +59,8 @@ en:
 
   acp:
     title: "ACP"
-    object: "ACP Object"
+    object:
+      title: "ACP Object"
 
   ou:
     title: "OU"
@@ -147,11 +148,13 @@ en:
 
   admins:
     title: "Admins"
-    object: "Admins Object"
+    object:
+      title: "Admins Object"
 
   roles:
     title: "Roles"
-    object: "Roles Object"
+    object:
+      title: "Roles Object"
 
   archive:
     deadlines:
@@ -256,7 +259,35 @@ en:
 
     disposeType:
       title: "Archive - Dispose type"
-      objet: "Dispose type Object"
+      object:
+        title: "Dispose type Object"
+        table:
+          id: "Id of the dispose type"
+          title: "German title"
+          titleF: "French title"
+          titleI: "Italian title"
+          titleE: "English title"
+      getAll:
+        title: "Get all data dispose type"
+        description: "This endpoint retrieves all dispose type."
+      getById:
+        title: "Get dispose type by its ID"
+        description: "This endpoint retrieves a specific dispose type."
+        table:
+          id: "The ID of the dispose type to retrieve"
+      create:
+        title: "Create a dispose type"
+        description: "This endpoint create a dispose type."
+      update:
+        title: "Update a dispose type"
+        description: "This endpoint update a dispose type."
+        table:
+          id: "The ID of the dispose type to update"
+      delete:
+        title: "Delete a dispose type"
+        description: "This endpoint delete a dispose type."
+        table:
+          id: "The ID of the dispose type to delete"
 
     publicStatus:
       title: "Archive - Public status"

@@ -1,26 +1,26 @@
 # <%= t('archive.disposeType.title') %>
-## Dispose type Object
-Name | Type | Description
+## <%= t('archive.disposeType.object.title') %>
+<%= t('table.name') %> | <%= t('table.type') %> | <%= t('table.description') %>
 --------- | ----------- | -----------
-id | integer | Id of the dispose type
-title | string | German title of the dispose type
-titleF | string | French title of the dispose type
-titleI | string | Italian title of the dispose type
-titleE | string | English title of the dispose type
+id | integer |  <%= t('archive.disposeType.object.table.id') %>
+title | string | <%= t('archive.disposeType.object.table.title') %>
+titleF | string | <%= t('archive.disposeType.object.table.titleF') %>
+titleI | string | <%= t('archive.disposeType.object.table.titleI') %>
+titleE | string | <%= t('archive.disposeType.object.table.titleE') %>
 
-## Get all dispose type
+## <%= t('archive.disposeType.getAll.title') %>
 ```shell
 curl --request GET \
-  --url http://127.0.0.1:9002/api/v1/ubit/archive/dispose_types \
+  --url http://<%= t('ip') %>/api/v1/ubit/archive/dispose_types \
   --header 'Authorization: Bearer {ACCESS_TOKEN}'
 ```
 
 ```javascript
 ```
 
->You must replace `{ACCESS_TOKEN}` with your personal token.
+><%= t('message.replaceToken') %>
 
->The above command returns JSON structured like this:
+><%= t('message.returnJson') %>
 
 ```json
 [
@@ -41,30 +41,30 @@ curl --request GET \
 ]
 ```
 
-This endpoint retrieves all dispose type
+<%= t('archive.disposeType.getAll.description') %>
 
-### HTTP Request
+### <%= t('httpRequest') %>
 
-`GET http://127.0.0.1:9002/api/v1/ubit/archive/dispose_types`
+`GET http://<%= t('ip') %>/api/v1/ubit/archive/dispose_types`
 
 <aside class="success">
-Remember — you must be authenticated !
+<%= t('message.remember') %>
 </aside>
 
-## Get dispose type by its ID
+## <%= t('archive.disposeType.getById.title') %>
 
 ```shell
 curl --request GET \
-  --url http://127.0.0.1:9002/api/v1/ubit/archive/dispose_types/1 \
+  --url http://<%= t('ip') %>/api/v1/ubit/archive/dispose_types/1 \
   --header 'Authorization: Bearer {ACCESS_TOKEN}'
 ```
 
 ```javascript
 ```
 
->You must replace `{ACCESS_TOKEN}` with your personal token.
+><%= t('message.replaceToken') %>
 
-> The above command returns JSON structured like this:
+><%= t('message.returnJson') %>
 
 ```json
 {
@@ -76,24 +76,24 @@ curl --request GET \
 }
 ```
 
-This endpoint retrieves a specific dispose type.
+<%= t('archive.disposeType.getById.description') %>
 
-### HTTP Request
-`GET http://127.0.0.1:9002/api/v1/ubit/archive/dispose_types/<ID>`
+### <%= t('httpRequest') %>
+`GET http://<%= t('ip') %>/api/v1/ubit/archive/dispose_types/<ID>`
 
-### URL Parameters
-Parameter | Description
+### <%= t('urlParameters') %>
+<%= t('table.parameter') %> | <%= t('table.description') %>
 --------- | -----------
-ID | The ID of the dispose type to retrieve
+ID | <%= t('archive.disposeType.getById.table.id') %>
 
 <aside class="success">
-Remember — you must be authenticated !
+<%= t('message.remember') %>
 </aside>
 
-## Create a dispose type
+## <%= t('archive.disposeType.create.title') %>
 ```shell
 curl --request POST \
-  --url http://127.0.0.1:9002/api/v1/ubit/archive/dispose_types/ \
+  --url http://<%= t('ip') %>/api/v1/ubit/archive/dispose_types/ \
   --header 'Authorization: Bearer {ACCESS_TOKEN}' \
   --data '{"title": "Nicht archivwürdig"}'
 ```
@@ -101,33 +101,33 @@ curl --request POST \
 ```javascript
 ```
 
->You must replace `{ACCESS_TOKEN}` with your personal token.
+><%= t('message.replaceToken') %>
 
-This endpoint create a dispose type
+<%= t('archive.disposeType.create.description') %>
 
-### HTTP Request
-`POST http://127.0.0.1:9002/api/v1/ubit/archive/dispose_types/`
+### <%= t('httpRequest') %>
+`POST http://<%= t('ip') %>/api/v1/ubit/archive/dispose_types/`
 
-### Body Parameters
-Parameter | Type | Description
+### <%= t('bodyParameters') %>
+<%= t('table.parameter') %> | <%= t('table.type') %> | <%= t('table.description') %>
 --------- | ----------- | -----------
-title * | string | German title of the dispose type
-titleF | string | French title of the dispose type
-titleI | string | Italian title of the dispose type
-titleE | string | English title of the dispose type
+title * | string | <%= t('archive.disposeType.object.table.title') %>
+titleF | string | <%= t('archive.disposeType.object.table.titleF') %>
+titleI | string | <%= t('archive.disposeType.object.table.titleI') %>
+titleE | string | <%= t('archive.disposeType.object.table.titleE') %>
 
 <aside class="notice">
-Parameters marked with an asterisk (*) are mandatory.
+<%= t('message.asterisk') %>
 </aside>
 
 <aside class="success">
-Remember — you must be authenticated !
+<%= t('message.remember') %>
 </aside>
 
-## Update a dispose type
+## <%= t('archive.disposeType.update.title') %>
 ```shell
 curl --request PUT \
-  --url http://127.0.0.1:9002/api/v1/ubit/archive/dispose_types/3 \
+  --url http://<%= t('ip') %>/api/v1/ubit/archive/dispose_types/3 \
   --header 'Authorization: Bearer {ACCESS_TOKEN}' \
   --data '{"titleF": "Sans valeur archivistique"}'
 ```
@@ -135,51 +135,51 @@ curl --request PUT \
 ```javascript
 ```
 
->You must replace `{ACCESS_TOKEN}` with your personal token.
+><%= t('message.replaceToken') %>
 
-This endpoint update a dispose type.
+<%= t('archive.disposeType.update.description') %>
 
-### HTTP Request
-`PUT http://127.0.0.1:9002/api/v1/ubit/archive/dispose_types/<ID>`
+### <%= t('httpRequest') %>
+`PUT http://<%= t('ip') %>/api/v1/ubit/archive/dispose_types/<ID>`
 
-### URL Parameters
-Parameter | Description
+### <%= t('urlParameters') %>
+<%= t('table.parameter') %> | <%= t('table.description') %>
 --------- | -----------
-ID | The ID of the dispose type to update
+ID | <%= t('archive.disposeType.update.table.id') %>
 
-### Body Parameters
-Parameter | Type | Description
+### <%= t('bodyParameters') %>
+<%= t('table.parameter') %> | <%= t('table.type') %> | <%= t('table.description') %>
 --------- | ----------- | -----------
-title | string | German title of the dispose type
-titleF | string | French title of the dispose type
-titleI | string | Italian title of the dispose type
-titleE | string | English title of the dispose type
+title | string | <%= t('archive.disposeType.object.table.title') %>
+titleF | string | <%= t('archive.disposeType.object.table.titleF') %>
+titleI | string | <%= t('archive.disposeType.object.table.titleI') %>
+titleE | string | <%= t('archive.disposeType.object.table.titleE') %>
 
 <aside class="success">
-Remember — you must be authenticated !
+<%= t('message.remember') %>
 </aside>
 
-## Delete a dispose type
+## <%= t('archive.disposeType.delete.title') %>
 ```shell
 curl --request DELETE \
-  --url http://127.0.0.1:9002/api/v1/ubit/archive/dispose_types/1 \
+  --url http://<%= t('ip') %>/api/v1/ubit/archive/dispose_types/1 \
   --header 'Authorization: Bearer {ACCESS_TOKEN}'
 ```
 
 ```javascript
 ```
->You must replace `{ACCESS_TOKEN}` with your personal token.
+><%= t('message.replaceToken') %>
 
-This endpoint delete a dispose type.
+<%= t('archive.disposeType.delete.description') %>
 
-### HTTP Request
-`DELETE http://127.0.0.1:9002/api/v1/ubit/archive/dispose_types/<ID>`
+### <%= t('httpRequest') %>
+`DELETE http://<%= t('ip') %>/api/v1/ubit/archive/dispose_types/<ID>`
 
-### URL Parameters
-Parameter | Description
+### <%= t('urlParameters') %>
+<%= t('table.parameter') %> | <%= t('table.description') %>
 --------- | -----------
-ID | The ID of the dispose type to delete
+ID | <%= t('archive.disposeType.delete.table.id') %>
 
 <aside class="success">
-Remember — you must be authenticated !
+<%= t('message.remember') %>
 </aside>
