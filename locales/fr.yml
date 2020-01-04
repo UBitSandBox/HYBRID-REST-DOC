@@ -3,7 +3,6 @@ fr:
   ip: "127.0.0.1:9002"
   introduction: "Introduction"
   authentication: "Authentification"
-  statusCode: "Code d'état"
 
   message:
     remember: "N'oubliez pas - vous devez être authentifié !"
@@ -357,3 +356,37 @@ fr:
   httpRequest: "Requête HTTP"
   urlParameters: "Paramètres URL"
   bodyParameters: "Paramètres Body"
+
+  statusCode:
+    title: "Code d'état"
+    description: "L'API HYBRID-REST utilise les codes d'état suivants:"
+    success:
+      title: "Succès"
+      table:
+        title:
+          successCode: "Code de réussite"
+          meaning: "Description"
+        data:
+          ok: "OK -- La requête a réussi."
+          created: "Created -- La requête a réussi et une nouvelle ressource a été créée en guise de résultat."
+    clientError:
+      title: "Erreurs client"
+      table:
+        title:
+          errorCode: "Code d'erreur"
+          meaning: "Description"
+        data:
+          badRequest: "Bad Request -- Cette réponse indique que le serveur n’a pas pu comprendre la requête à cause d’une syntaxe invalide."
+          unAuthorized: "Unauthorized -- Une identification est nécessaire pour obtenir la réponse demandée."
+          forbidden: "Forbidden -- Le client n’a pas les droits d’accès au contenu."
+          notFound: "Not Found -- Le serveur n’a pas trouvé la ressource demandée."
+          conflict: "Conflict -- Cette réponse est envoyée quand une requête entre en conflit avec l’état actuel du serveur."
+          unprocessableEntity: "La requête a bien été constituée mais n’a pas pu être traitée à cause d’erreurs sémantiques."
+    serverError:
+      title: "Erreurs de serveur"
+      table:
+        title:
+          errorCode: "Error code"
+          meaning: "Meaning"
+        data:
+          internalServerError: "Internal Server Error -- Le serveur a rencontré une situation qu’il ne sait pas traiter."

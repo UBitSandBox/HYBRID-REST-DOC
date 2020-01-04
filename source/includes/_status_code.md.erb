@@ -1,24 +1,24 @@
-# <%= t('statusCode') %>
-The HYBRID-REST API uses the following status codes:
+# <%= t('statusCode.title') %>
+<%= t('statusCode.description') %>
 
-## Success
-Success Code | Meaning
+## <%= t('statusCode.success.title') %>
+<%= t('statusCode.success.table.title.successCode') %> | <%= t('statusCode.success.table.title.meaning') %>
 ---------- | -------
-200 | OK -- The request is valid.
-201 | Created -- The request has been fulfilled, resulting in the creation of a new resource.
+200 | <%= t('statusCode.success.table.data.ok') %>
+201 | <%= t('statusCode.success.table.data.created') %>
 
 
-## Client errors
-Error Code | Meaning
+## <%= t('statusCode.clientError.title') %>
+<%= t('statusCode.clientError.table.title.errorCode') %> | <%= t('statusCode.clientError.table.title.meaning') %>
 ---------- | -------
-400 | Bad Request -- The request is invalid.
-401 | Unauthorized -- The user are not authenticated.
-403 | Forbidden -- The user has not the necessary permissions.
-404 | Not Found -- The specified ressource could not be found.
-409 | Conflict -- Indicates that the request could not be processed because of conflict in the current state of the resource.
-422 | Unprocessable Entity -- The request was well-formed but was unable to be followed due to semantic errors.
+400 | <%= t('statusCode.clientError.table.data.badRequest') %>
+401 | <%= t('statusCode.clientError.table.data.unAuthorized') %>
+403 | <%= t('statusCode.clientError.table.data.forbidden') %>
+404 | <%= t('statusCode.clientError.table.data.notFound') %>
+409 | <%= t('statusCode.clientError.table.data.conflict') %>
+422 | <%= t('statusCode.clientError.table.data.unprocessableEntity') %>
 
-## Server errors
-Error Code | Meaning
+## <%= t('statusCode.serverError.title') %>
+<%= t('statusCode.serverError.table.title.errorCode') %> | <%= t('statusCode.serverError.table.title.meaning') %>
 ---------- | -------
-500 | Internal Server Error -- A generic error message, given when an unexpected condition was encountered and no more specific message is suitable.
+500 | <%= t('statusCode.serverError.table.data.internalServerError') %>

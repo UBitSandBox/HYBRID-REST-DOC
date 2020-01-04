@@ -3,7 +3,6 @@ en:
   ip: "127.0.0.1:9002"
   introduction: "Introduction"
   authentication: "Authentication"
-  statusCode: "Status code"
 
   message:
     remember: "Remember — you must be authenticated !"
@@ -356,3 +355,37 @@ en:
   httpRequest: "HTTP Request"
   urlParameters: "URL Parameters"
   bodyParameters: "Body parameters"
+
+  statusCode:
+    title: "Status code"
+    description: "The HYBRID-REST API uses the following status codes:"
+    success:
+      title: "Success"
+      table:
+        title:
+          successCode: "Success code"
+          meaning: "Meaning"
+        data:
+          ok: "OK -- The request is valid."
+          created: "Created -- The request has been fulfilled, resulting in the creation of a new resource."
+    clientError:
+      title: "Client errors"
+      table:
+        title:
+          errorCode: "Error code"
+          meaning: "Meaning"
+        data:
+          badRequest: "Bad Request -- The request is invalid."
+          unAuthorized: "Unauthorized -- The user are not authenticated."
+          forbidden: "Forbidden -- The user has not the necessary permissions."
+          notFound: "Not Found -- The specified ressource could not be found."
+          conflict: "Conflict -- Indicates that the request could not be processed because of conflict in the current state of the resource."
+          unprocessableEntity: "Unprocessable Entity -- The request was well-formed but was unable to be followed due to semantic errors."
+    serverError:
+      title: "Server errors"
+      table:
+        title:
+          errorCode: "Error code"
+          meaning: "Meaning"
+        data:
+          internalServerError: "Internal Server Error -- A generic error message, given when an unexpected condition was encountered and no more specific message is suitable."
