@@ -156,7 +156,35 @@ en:
   archive:
     deadlines:
       title: "Archive - Deadlines"
-      object: "Deadlines Object"
+      object:
+        title: "Deadlines Object"
+        table:
+          id: "Id of the deadline"
+          title: "German title"
+          titleF: "French title"
+          titleI: "Italian title"
+          titleE: "English title"
+      getAll:
+        title: "Get all data deadlines"
+        description: "This endpoint retrieves all deadlines."
+      getById:
+        title: "Get deadline by its ID"
+        description: "This endpoint retrieves a specific deadline."
+        table:
+          id: "The ID of the deadline to retrieve"
+      create:
+        title: "Create a deadline"
+        description: "This endpoint create a deadline."
+      update:
+        title: "Update a deadline"
+        description: "This endpoint update a deadline."
+        table:
+          id: "The ID of the deadline to update"
+      delete:
+        title: "Delete a deadline"
+        description: "This endpoint delete a deadline."
+        table:
+          id: "The ID of the deadline to delete"
 
     deadlineCategory:
       title: "Archive - Deadline category"
