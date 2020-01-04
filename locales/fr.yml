@@ -1,24 +1,9 @@
 ---
 fr:
   ip: "127.0.0.1:9002"
-  title:
-    introduction: "Introduction"
-    authentication: "Authentification"
-    os: "OS"
-    acl: "ACL"
-    acp: "ACP"
-    ou: "UO"
-    users: "Users"
-    admins: "Admins"
-    roles: "Roles"
-    archive:
-      deadlines: "Archive/Deadlines"
-      deadlineCategory: "Archive/Deadline category"
-      dataSecurity: "Archive/Data security"
-      disposeType: "Archive/Dispose type"
-      publicStatus: "Archvie/Public status"
-      securityClass: "Archive/Security class"
-    statusCode: "Code d'état"
+  introduction: "Introduction"
+  authentication: "Authentification"
+  statusCode: "Code d'état"
 
   message:
     remember: "N'oubliez pas - vous devez être authentifié !"
@@ -33,9 +18,11 @@ fr:
     parameter: "Paramètre"
 
   os:
+    title: "OS"
     object: "Objet OS"
 
   acl:
+    title: "ACL"
     object:
       title: "Objet ACL"
       table:
@@ -71,11 +58,13 @@ fr:
         id: "L'ID de l'ACL à supprimer"
 
   acp:
+    title: "ACP"
     object: "Objet ACP"
 
   ou:
+    title: "Unité d'organisation"
     object:
-      title: "Objet UO"
+      title: "Objet unité d'organisation"
       table:
         id: "Id de l'unité d'organisation"
         shortName: "Le nom court de l'unité d'organisation"
@@ -111,23 +100,70 @@ fr:
         id: "L'ID de l'unité d'organisation à supprimer"
 
   users:
-    object: "Objet Users"
+    title: "Utilisateurs"
+    object:
+      title: "Objet utilisateur"
+      table:
+        id: "Id de l'utilisateur"
+        firstName: "Prénom de l'utilisateur"
+        lastName: "Last name of the user"
+        shortName: "Nom de l'utilisateur"
+        login: "Login de l'utilisateur"
+        street: "Rue"
+        city: "Ville"
+        zip: "Code postal"
+        phoneOffice: "N° de téléphone du bureau"
+        phoneMobile: "N° de téléphone mobile"
+        fax: "N° de fax"
+        email: "Adresse e-mail"
+        signature: "Signature allemande"
+        signatureF: "Signature française"
+        signatureI: "Signature italienne"
+        signatureE: "Signature anglaise"
+        isActive: "TODO"
+        adDomain: "Nom de domaine"
+        password: "Mot de passe"
+    getAll:
+      title: "Obtenir tous les utilisateurs"
+      description: "Ce endpoint récupère tous les utilisateurs."
+    getById:
+      title: "Obtenir un utilisateur par son ID"
+      description: "Ce endpoint récupère un utilisateur spécifique."
+      table:
+        id: "L'ID de l'utilisateur à récupérer"
+    create:
+      title: "Créer un utilisateur"
+      description: "Ce endpoint crée un utilisateur."
+    update:
+      title: "Mettre à jour un utilisateur"
+      description: "Ce endpoint met à jour un utilisateur."
+      table:
+        id: "L'ID de l'utilisateur à mettre à jour"
+    delete:
+      title: "Supprimer un utilisateur"
+      description: "Ce endpoint supprime un utilisateur."
+      table:
+        id: "L'ID de l'utilisateur à supprimer"
 
   admins:
+    title: "Admins"
     object: "Objet Admins"
 
   roles:
+    title: "Roles"
     object: "Objet Roles"
 
   archive:
     deadlines:
+      title: "Archive - Deadlines"
       object: "Deadlines Object"
 
     deadlineCategory:
+      title: "Archive - Catégorie de deadline"
       object:
-        title: "Objet Deadline category"
+        title: "Objet Catégorie de deadline"
         table:
-          id: "Id de la deadline category"
+          id: "Id de la catégorie de deadline"
           title: "Titre allemand"
           titleF: "Titre français"
           titleI: "Titre italien"
@@ -137,62 +173,65 @@ fr:
           descI: "Description italienne"
           descE: "Description anglaise"
       getAll:
-        title: "Obtenir toutes les deadline category"
+        title: "Obtenir toutes les catégories de deadline"
         description: "Ce endpoint récupère toutes les deadline category."
       getById:
-        title: "Obtenir une data security par son ID"
-        description: "Ce endpoint récupère une deadline category spécifique."
+        title: "Obtenir une catégorie de deadline par son ID"
+        description: "Ce endpoint récupère une catégorie de deadline spécifique."
         table:
-          id: "L'ID de la deadline category à récupérer"
+          id: "L'ID de la catégorie de deadline à récupérer"
       create:
-        title: "Créer une deadline category"
-        description: "Ce endpoint crée une deadline category."
+        title: "Créer une catégorie de deadline"
+        description: "Ce endpoint crée une catégorie de deadline."
       update:
-        title: "Mettre à jour une data security"
-        description: "Ce endpoint met à jour une deadline category."
+        title: "Mettre à jour une catégorie de deadline"
+        description: "Ce endpoint met à jour une catégorie de deadline."
         table:
-          id: "L'ID de la deadline category à mettre à jour."
+          id: "L'ID de la catégorie de deadline à mettre à jour."
       delete:
-        title: "Supprimer une deadline category"
-        description: "Ce endpoint supprime une deadline category."
+        title: "Supprimer une catégorie de deadline"
+        description: "Ce endpoint supprime une catégorie de deadline"
         table:
-          id: "L'ID de la deadline category à supprimer"
+          id: "L'ID de la catégorie de deadline à supprimer"
 
     dataSecurity:
+      title: "Archive - Sécurité des données"
       object:
-        title: "Objet Data security"
+        title: "Objet Sécurité des données"
         table:
-          id: "Id de la data security"
+          id: "Id de la sécurité des données"
           title: "Titre allemand"
           titleF: "Titre français"
           titleI: "Titre italien"
           titleE: "Titre anglais"
       getAll:
-        title: "Obtenir toute les data security"
-        description: "Ce endpoint récupère toute les data security."
+        title: "Obtenir toute les sécurité des données"
+        description: "Ce endpoint récupère toute les sécurité des données."
       getById:
-        title: "Obtenir les data security par son ID"
-        description: "Ce endpoint récupère une data security spécifique."
+        title: "Obtenir une sécurité des données par son ID"
+        description: "Ce endpoint récupère une sécurité des données spécifique."
         table:
-          id: "L'ID de la data security à récupérer"
+          id: "L'ID de la sécurité des données à récupérer"
       create:
-        title: "Créer une data security"
-        description: "Ce endpoint crée une data security."
+        title: "Créer une sécurité des données"
+        description: "Ce endpoint crée une sécurité des données."
       update:
-        title: "Mettre à jour une data security"
-        description: "Ce endpoint met à jour une data security."
+        title: "Mettre à jour une sécurité des données"
+        description: "Ce endpoint met à jour une sécurité des données."
         table:
-          id: "L'ID de la data security à mettre à jour"
+          id: "L'ID de la sécurité des données à mettre à jour"
       delete:
-        title: "Supprimer une data security"
-        description: "Ce endpoint supprime une data security."
+        title: "Supprimer une sécurité des données"
+        description: "Ce endpoint supprime une sécurité des données."
         table:
-          id: "L'ID de la data security à supprimer"
+          id: "L'ID de la sécurité des données à supprimer"
 
     disposeType:
+      title: "Archive - Dispose type"
       objet: "Dispose type Object"
 
     publicStatus:
+      title: "Archive - Statut public"
       object:
         title: "Objet statut public"
         table:
@@ -224,6 +263,7 @@ fr:
           id: "L'ID du statut public à supprimer"
 
     securityClass:
+      title: "Archive - Classe de sécurité"
       object:
         title: "Objet classe de sécurité"
         table:

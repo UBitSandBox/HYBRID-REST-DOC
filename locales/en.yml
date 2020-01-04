@@ -1,24 +1,9 @@
 ---
 en:
   ip: "127.0.0.1:9002"
-  title:
-    introduction: "Introduction"
-    authentication: "Authentication"
-    os: "OS"
-    acl: "ACL"
-    acp: "ACP"
-    ou: "OU"
-    users: "Users"
-    admins: "Admins"
-    roles: "Roles"
-    archive:
-      deadlines: "Archive/Deadlines"
-      deadlineCategory: "Archive/Deadline category"
-      dataSecurity: "Archive/Data security"
-      disposeType: "Archive/Dispose type"
-      publicStatus: "Archvie/Public status"
-      securityClass: "Archive/Security class"
-    statusCode: "Status code"
+  introduction: "Introduction"
+  authentication: "Authentication"
+  statusCode: "Status code"
 
   message:
     remember: "Remember — you must be authenticated !"
@@ -33,9 +18,11 @@ en:
     parameter: "Parameter"
 
   os:
+    title: "OS"
     object: "OS Object"
 
   acl:
+    title: "ACL"
     object:
       title: "ACL Object"
       table:
@@ -71,9 +58,11 @@ en:
         id: "The ID of the ACL to delete"
 
   acp:
+    title: "ACP"
     object: "ACP Object"
 
   ou:
+    title: "OU"
     object:
       title: "OU Object"
       table:
@@ -111,19 +100,66 @@ en:
         id: "The ID of the OU to delete"
 
   users:
-    object: "Users Object"
+    title: "Users"
+    object:
+      title: "Users Object"
+      table:
+        id: "Id of the user"
+        firstName: "First name"
+        lastName: "Last name"
+        shortName: "Short name"
+        login: "Login"
+        street: "Street"
+        city: "City"
+        zip: "Zip"
+        phoneOffice: "Phone office number"
+        phoneMobile: "Phone mobile number"
+        fax: "Fax number"
+        email: "Email address"
+        signature: "German signature"
+        signatureF: "French signature"
+        signatureI: "Italian signature"
+        signatureE: "English signature"
+        isActive: "TODO"
+        adDomain: "Domain name"
+        password: "Password"
+    getAll:
+      title: "Get all users"
+      description: "This endpoint retrieves all users."
+    getById:
+      title: "Get user by its ID"
+      description: "This endpoint retrieves a specific user."
+      table:
+        id: "The ID of the user to retrieve"
+    create:
+      title: "Create a user"
+      description: "This endpoint create a user."
+    update:
+      title: "Update a user"
+      description: "This endpoint update a user."
+      table:
+        id: "The ID of the user to update"
+    delete:
+      title: "Delete a user"
+      description: "This endpoint delete a user."
+      table:
+        id: "The ID of the user to delete"
 
   admins:
+    title: "Admins"
     object: "Admins Object"
 
   roles:
+    title: "Roles"
     object: "Roles Object"
 
   archive:
     deadlines:
+      title: "Archive - Deadlines"
       object: "Deadlines Object"
 
     deadlineCategory:
+      title: "Archive - Deadline category"
       object:
         title: "Deadline category Object"
         table:
@@ -159,6 +195,7 @@ en:
           id: "The ID of the deadline category to delete"
 
     dataSecurity:
+      title: "Archive - Data security"
       object:
         title: "Data security Object"
         table:
@@ -190,9 +227,11 @@ en:
           id: "The ID of the data security to delete"
 
     disposeType:
+      title: "Archive - Dispose type"
       objet: "Dispose type Object"
 
     publicStatus:
+      title: "Archive - Public status"
       object:
         title: "Public status Object"
         table:
@@ -224,6 +263,7 @@ en:
           id: "The ID of the public status to delete"
 
     securityClass:
+      title: "Archive - Security class"
       object:
         title: "Security class Object"
         table:

@@ -1,40 +1,40 @@
-# <%= t('title.users') %>
-## Users Object
-Name | Type | Description
+# <%= t('users.title') %>
+## <%= t('users.object.title') %>
+<%= t('table.name') %> | <%= t('table.type') %> | <%= t('table.description') %>
 --------- | ----------- | -----------
-id | integer | The id of the user
-firstName | string | First name of the user
-lastName | string | Last name of the user
-shortName | string | Short name of the user
-login | string | Login of the user
-street | string | Street of the user
-city | string | City of the user
-zip | string | Zip of the city
-phoneOffice | string | Phone office of the user
-phoneMobile | string | Phone mobile of the user
-fax | string | Fax of the user
-email | string | Email of the user
-signature | string | German signature of the user
-signatureF | string | French signature of the user
-signatureI | string | Italian signature of the user
-signatureE | string | English signature of the user
-isActive | bool | TODO
-adDomain | string | Domain name
-password | string | Password of the user
+id | integer | <%= t('users.object.table.id') %>
+firstName | string | <%= t('users.object.table.firstName') %>
+lastName | string | <%= t('users.object.table.lastName') %>
+shortName | string | <%= t('users.object.table.shortName') %>
+login | string | <%= t('users.object.table.login') %>
+street | string | <%= t('users.object.table.street') %>
+city | string | <%= t('users.object.table.city') %>
+zip | string | <%= t('users.object.table.zip') %>
+phoneOffice | string | <%= t('users.object.table.phoneOffice') %>
+phoneMobile | string | <%= t('users.object.table.phoneMobile') %>
+fax | string | <%= t('users.object.table.fax') %>
+email | string | <%= t('users.object.table.email') %>
+signature | string | <%= t('users.object.table.signature') %>
+signatureF | string | <%= t('users.object.table.signatureF') %>
+signatureI | string | <%= t('users.object.table.signatureI') %>
+signatureE | string | <%= t('users.object.table.signatureE') %>
+isActive | bool | <%= t('users.object.table.isActive') %>
+adDomain | string | <%= t('users.object.table.adDomain') %>
+password | string | <%= t('users.object.table.password') %>
 
-## Get all users
+## <%= t('users.getAll.title') %>
 ```shell
 curl --request GET \
-  --url http://127.0.0.1:9002/api/v1/ubit/users \
+  --url http://<%= t('ip') %>/api/v1/ubit/users \
   --header 'Authorization: Bearer {ACCESS_TOKEN}'
 ```
 
 ```javascript
 ```
 
->You must replace `{ACCESS_TOKEN}` with your personal token.
+><%= t('message.replaceToken') %>
 
->The above command returns JSON structured like this:
+><%= t('message.returnJson') %>
 
 ```json
 [
@@ -83,30 +83,30 @@ curl --request GET \
 ]
 ```
 
-This endpoint retrieves all users
+<%= t('users.getAll.description') %>
 
-### HTTP Request
+### <%= t('httpRequest') %>
 
-`GET http://127.0.0.1:9002/api/v1/ubit/users`
+`GET http://<%= t('ip') %>/api/v1/ubit/users`
 
 <aside class="success">
-Remember — you must be authenticated !
+<%= t('message.remember') %>
 </aside>
 
-## Get user by its ID
+## <%= t('users.getById.title') %>
 
 ```shell
 curl --request GET \
-  --url http://127.0.0.1:9002/api/v1/ubit/users/1 \
+  --url http://<%= t('ip') %>/api/v1/ubit/users/1 \
   --header 'Authorization: Bearer {ACCESS_TOKEN}'
 ```
 
 ```javascript
 ```
 
->You must replace `{ACCESS_TOKEN}` with your personal token.
+><%= t('message.replaceToken') %>
 
-> The above command returns JSON structured like this:
+> <%= t('message.returnJson') %>
 
 ```json
 {
@@ -132,24 +132,24 @@ curl --request GET \
     }
 ```
 
-This endpoint retrieves a specific user.
+<%= t('users.getById.description') %>
 
-### HTTP Request
-`GET http://127.0.0.1:9002/api/v1/ubit/users/<ID>`
+### <%= t('httpRequest') %>
+`GET http://<%= t('ip') %>/api/v1/ubit/users/<ID>`
 
-### URL Parameters
-Parameter | Description
+### <%= t('urlParameters') %>
+<%= t('table.parameter') %> | <%= t('table.description') %>
 --------- | -----------
-ID | The ID of the user to retrieve
+ID | <%= t('users.getById.table.id') %>
 
 <aside class="success">
-Remember — you must be authenticated !
+<%= t('message.remember') %>
 </aside>
 
-## Create a user
+## <%= t('users.create.title') %>
 ```shell
 curl --request POST \
-  --url http://127.0.0.1:9002/api/v1/ubit/users/ \
+  --url http://<%= t('ip') %>/api/v1/ubit/users/ \
   --header 'Authorization: Bearer {ACCESS_TOKEN}' \
   --data '{"firstName":"Gilles", "lastName":"Avare", "shortName":"AVG", "login":"ubit-avg", "email":"gilles.avare@ubit.ch", "isActive":true, "adDomain":"ubit", "password": "unitTest1234"}'
 ```
@@ -157,47 +157,47 @@ curl --request POST \
 ```javascript
 ```
 
->You must replace `{ACCESS_TOKEN}` with your personal token.
+><%= t('message.replaceToken') %>
 
-This endpoint create a user.
+<%= t('users.create.description') %>
 
-### HTTP Request
-`POST http://127.0.0.1:9002/api/v1/ubit/users/`
+### <%= t('httpRequest') %>
+`POST http://<%= t('ip') %>/api/v1/ubit/users/`
 
-### Body Parameters
-Parameter | Type | Description
+### <%= t('bodyParameters') %>
+<%= t('table.parameter') %> | <%= t('table.type') %> | <%= t('table.description') %>
 --------- | ----------- | -----------
-firstName * | string | First name of the user
-lastName * | string | Last name of the user
-shortName * | string | Short name of the user
-login * | string | Login of the user
-street | string | Street of the user
-city | string | City of the user
-zip | string | Zip of the city
-phoneOffice | string | Phone office of the user
-phoneMobile | string | Phone mobile of the user
-fax | string | Fax of the user
-email * | string | Email of the user
-signature | string | German signature of the user
-signatureF | string | French signature of the user
-signatureI | string | Italian signature of the user
-signatureE | string | English signature of the user
-isActive * | bool | TODO
-adDomain * | string | Domain name
-password * | string | Password of the user
+firstName * | string | <%= t('users.object.table.firstName') %>
+lastName * | string | <%= t('users.object.table.lastName') %>
+shortName * | string | <%= t('users.object.table.shortName') %>
+login * | string | <%= t('users.object.table.login') %>
+street | string | <%= t('users.object.table.street') %>
+city | string | <%= t('users.object.table.city') %>
+zip | string | <%= t('users.object.table.zip') %>
+phoneOffice | string | <%= t('users.object.table.phoneOffice') %>
+phoneMobile | string | <%= t('users.object.table.phoneMobile') %>
+fax | string | <%= t('users.object.table.fax') %>
+email * | string | <%= t('users.object.table.email') %>
+signature | string | <%= t('users.object.table.signature') %>
+signatureF | string | <%= t('users.object.table.signatureF') %>
+signatureI | string | <%= t('users.object.table.signatureI') %>
+signatureE | string | <%= t('users.object.table.signatureE') %>
+isActive * | bool | <%= t('users.object.table.isActive') %>
+adDomain * | string | <%= t('users.object.table.adDomain') %>
+password * | string | <%= t('users.object.table.password') %>
 
 <aside class="notice">
-Parameters marked with an asterisk (*) are mandatory.
+<%= t('message.asterisk') %>
 </aside>
 
 <aside class="success">
-Remember — you must be authenticated !
+<%= t('message.remember') %>
 </aside>
 
-## Update a user
+## <%= t('users.update.title') %>
 ```shell
 curl --request PUT \
-  --url http://127.0.0.1:9002/api/v1/ubit/users/3 \
+  --url http://<%= t('ip') %>/api/v1/ubit/users/3 \
   --header 'Authorization: Bearer {ACCESS_TOKEN}' \
   --data '{"phoneOffice": "041 963 55 60"}'
 ```
@@ -205,65 +205,65 @@ curl --request PUT \
 ```javascript
 ```
 
->You must replace `{ACCESS_TOKEN}` with your personal token.
+><%= t('message.replaceToken') %>
 
-This endpoint update a user.
+<%= t('users.update.description') %>
 
-### HTTP Request
-`PUT http://127.0.0.1:9002/api/v1/ubit/users/<ID>`
+### <%= t('httpRequest') %>
+`PUT http://<%= t('ip') %>/api/v1/ubit/users/<ID>`
 
-### URL Parameters
-Parameter | Description
+### <%= t('urlParameters') %>
+<%= t('table.parameter') %> | <%= t('table.description') %>
 --------- | -----------
-ID | The ID of the user to update
+ID | <%= t('users.update.table.id') %>
 
-### Body Parameters
-Parameter | Type | Description
+### <%= t('bodyParameters') %>
+<%= t('table.parameter') %> | <%= t('table.type') %> | <%= t('table.description') %>
 --------- | ----------- | -----------
-firstName | string | First name of the user
-lastName | string | Last name of the user
-shortName | string | Short name of the user
-login | string | Login of the user
-street | string | Street of the user
-city | string | City of the user
-zip | string | Zip of the city
-phoneOffice | string | Phone office of the user
-phoneMobile | string | Phone mobile of the user
-fax | string | Fax of the user
-email | string | Email of the user
-signature | string | German signature of the user
-signatureF | string | French signature of the user
-signatureI | string | Italian signature of the user
-signatureE | string | English signature of the user
-isActive | bool | TODO
-adDomain | string | Domain name
-password | string | Password of the user
+firstName | string | <%= t('users.object.table.firstName') %>
+lastName | string | <%= t('users.object.table.lastName') %>
+shortName | string | <%= t('users.object.table.shortName') %>
+login | string | <%= t('users.object.table.login') %>
+street | string | <%= t('users.object.table.street') %>
+city | string | <%= t('users.object.table.city') %>
+zip | string | <%= t('users.object.table.zip') %>
+phoneOffice | string | <%= t('users.object.table.phoneOffice') %>
+phoneMobile | string | <%= t('users.object.table.phoneMobile') %>
+fax | string | <%= t('users.object.table.fax') %>
+email | string | <%= t('users.object.table.email') %>
+signature | string | <%= t('users.object.table.signature') %>
+signatureF | string | <%= t('users.object.table.signatureF') %>
+signatureI | string | <%= t('users.object.table.signatureI') %>
+signatureE | string | <%= t('users.object.table.signatureE') %>
+isActive | bool | <%= t('users.object.table.isActive') %>
+adDomain | string | <%= t('users.object.table.adDomain') %>
+password | string | <%= t('users.object.table.password') %>
 
 <aside class="success">
-Remember — you must be authenticated !
+<%= t('message.remember') %>
 </aside>
 
-## Delete a user
+## <%= t('users.delete.title') %>
 ```shell
 curl --request DELETE \
-  --url http://127.0.0.1:9002/api/v1/ubit/users/1 \
+  --url http://<%= t('ip') %>/api/v1/ubit/users/1 \
   --header 'Authorization: Bearer {ACCESS_TOKEN}'
 ```
 
 ```javascript
 ```
->You must replace `{ACCESS_TOKEN}` with your personal token.
+><%= t('message.replaceToken') %>
 
-This endpoint delete a user.
+<%= t('users.delete.description') %>
 
-### HTTP Request
-`DELETE http://127.0.0.1:9002/api/v1/ubit/users/<ID>`
+### <%= t('httpRequest') %>
+`DELETE http://<%= t('ip') %>/api/v1/ubit/users/<ID>`
 
-### URL Parameters
-Parameter | Description
+### <%= t('urlParameters') %>
+<%= t('table.parameter') %> | <%= t('table.description') %>
 --------- | -----------
-ID | The ID of the user to delete
+ID | <%= t('users.delete.table.id') %>
 
 <aside class="success">
-Remember — you must be authenticated !
+<%= t('message.remember') %>
 </aside>
