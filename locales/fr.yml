@@ -1,5 +1,6 @@
 ---
 fr:
+  title: "HYBRID-REST"
   ip: "127.0.0.1:9002"
 
   introduction:
@@ -33,8 +34,195 @@ fr:
 
   os:
     title: "OS"
-    object:
-      title: "Objet OS"
+    group:
+      object:
+        title: "Objet groupe"
+        table:
+          id: "Id du groupe"
+          parentId: "L'id parent du groupe"
+          ouId: "Id de l'UO"
+          userId: "Id de l'utilisateur"
+          aclId: "Id de l'ACL"
+          position: "TODO"
+          title: "Titre allemand"
+          titleF: "Titre français"
+          titleI: "Titre italien"
+          titleE: "Titre anglais"
+          dossiersZkType: "TODO"
+          posType: "Gruppe"
+          dossiersDefaultAcl: "ACL par défaut"
+          path: "Path"
+          updatedAt: "Date de modification"
+          modifiedBy: "Modifier par"
+          createdAt: "Date de création"
+          createdBy: "Créer par"
+          posInLevel: "Niveau de la position"
+          archDeadline: "Id de la deadline"
+          archDisposeType: "Id du type d'archive"
+          archDataSecurity: "Id de la sécurité des données"
+          archPublicStatus: "Id du statut public"
+          archSecurityClass: "Id de la classe de sécurité"
+          archDeadLineSecCat: "Id de la catégorie de deadline"
+      getAll:
+        title: "Obtenir tous les groupes"
+        description: "Ce endpoint récupère tous les groupes"
+      getById:
+        title: "Obtenir un groupe par son ID"
+        description: "Ce endpoint récupère un groupe spécifique"
+        table:
+          id: "L'id du groupe à récupérer"
+      create:
+        title: "Créer un groupe"
+        description: "Ce endpoint crée un groupe."
+      update:
+        title: "Mettre à jour un groupe"
+        description: "Ce endpoint met à jour un groupe."
+        table:
+          id: "L'id du groupe à mettre à jour"
+      delete:
+        title: "Supprimer un groupe"
+        description: "Ce endpoint supprime un groupe."
+        table:
+          id: "L'id du groupe à supprimer."
+    category:
+      object:
+        title: "Objet rubrique"
+        table:
+          id: "Id de la rubrique"
+          parentId: "L'id parent de la rubrique"
+          ouId: "Id de l'UO"
+          userId: "Id de l'utilisateur"
+          aclId: "Id de l'ACL"
+          position: "TODO"
+          title: "Titre allemand"
+          titleF: "Titre français"
+          titleI: "Titre italien"
+          titleE: "Titre anglais"
+          dossiersZkType: "TODO"
+          posType: "Gruppe"
+          dossiersDefaultAcl: "ACL par défaut"
+          path: "Path"
+          updatedAt: "Date de modification"
+          modifiedBy: "Modifier par"
+          createdAt: "Date de création"
+          createdBy: "Créer par"
+          posInLevel: "Niveau de la position"
+          archDeadline: "Id de la deadline"
+          archDisposeType: "Id du type d'archive"
+          archDataSecurity: "Id de la sécurité des données"
+          archPublicStatus: "Id du statut public"
+          archSecurityClass: "Id de la classe de sécurité"
+          archDeadLineSecCat: "Id de la catégorie de deadline"
+      getAll:
+        title: "Récupérer toutes les rubriques"
+        description: "Ce endpoint récupère toutes les rubriques."
+        table:
+          id: "ID du groupe à partir duquel récupérer toutes les rubriques."
+      getById:
+        title: "Obtenir une catégorie par son ID"
+        description: "Ce endpoint récupère une rubrique spécifique."
+        table:
+          id: "L'id de la rubrique à récupérer"
+      create:
+        title: "Créer une rubrique"
+        description: "Ce endpoint crée une rubrique."
+        table:
+          id: "L'ID du groupe dans lequel créer la rubrique."
+      update:
+        title: "Mettre à jour une rubrique"
+        description: "Ce endpoint met à jour une rubrique."
+        table:
+          id: "L'ID de la rubrique à mettre à jour"
+      delete:
+        title: "Supprimer une rubrique"
+        description: "Ce endpoint supprime une rubrique."
+        table:
+          id: "L'ID de la rubrique à supprimer"
+    folder:
+      object:
+        title: "Objet dossier"
+        table:
+          id: "Id du dossier"
+          parentId: "L'id parent du dossier"
+          ouId: "Id de l'UO"
+          userId: "Id de l'utilisateur"
+          aclId: "Id de l'ACL"
+          title: "Titre allemand"
+          zkType: "TODO"
+          zkTxt: "TODO"
+          path: "Path"
+          fsfsIdId: "TODO"
+          tags: "TODO"
+          updatedAt: "Date de modification"
+          modifiedBy: "Modifier par"
+          createdAt: "Date de création"
+          createdBy: "Créer par"
+          isClosed: "TODO"
+      getAll:
+        title: "Get all folder"
+        description: "This endpoint retrieves all folder from a category."
+        table:
+          id: "The ID of the category to retrieve all folder from."
+      getById:
+        title: "Get folder by its ID"
+        description: "This endpoint retrieves a specific folder."
+        table:
+          id: "The ID of the folder to retrieve"
+      create:
+        title: "Create a folder"
+        description: "This endpoint create a folder."
+        table:
+          id: "The ID of the category to create the folder in."
+      update:
+        title: "Update a folder"
+        description: "This endpoint update a folder."
+        table:
+          id: "The ID of the folder to update"
+      delete:
+        title: "Delete a folder"
+        description: "This endpoint delete a folder."
+        table:
+          id: "The ID of the folder to delete"
+    subfolder:
+      object:
+        title: "Subfolder Object"
+        table:
+          id: "Id of the subfolder"
+          fileName: "The name of the subfolder"
+          path: "The path of the subfolder"
+          isFile: "False"
+          isDirectory: "True"
+          extension: "-"
+          size: "Size"
+          lastAccessedAt: "Last accessed"
+          lastModifiedAt: "Last update"
+          createdAt: "Created at"
+          name: "Name of the subfolder"
+      getAll:
+        title: "Get all subfolder"
+        description: "This endpoint retrieves all subfolder from a folder."
+        table:
+          id: "The ID of the folder to retrieve all subfolder from."
+      getById:
+        title: "Get subfolder by its ID"
+        description: "This endpoint retrieves a specific subfolder."
+        table:
+          id: "The ID of the subfolder to retrieve"
+      create:
+        title: "Create a subfolder"
+        description: "This endpoint create a subfolder."
+        table:
+          id: "The ID of the folder to create the subfolder in."
+      update:
+        title: "Update a subfolder"
+        description: "This endpoint update a subfolder."
+        table:
+          id: "The ID of the subfolder to update"
+      delete:
+        title: "Delete a subfolder"
+        description: "This endpoint delete a subfolder."
+        table:
+          id: "The ID of the subfolder to delete"
 
   acl:
     title: "ACL"

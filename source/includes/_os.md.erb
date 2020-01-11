@@ -1,3 +1,980 @@
 # <%= t('os.title') %>
-## <%= t('os.object.title') %>
+<!-- Group -->
+<!-- Object -->
+## <%= t('os.group.object.title') %>
 <%= t('table.name') %> | <%= t('table.type') %> | <%= t('table.description') %>
+--------- | ----------- | -----------
+id | integer | <%= t('os.group.object.table.id') %>
+parentId | integer | <%= t('os.group.object.table.parentId') %>
+ouId | integer | <%= t('os.group.object.table.ouId') %>
+userId | integer | <%= t('os.group.object.table.userId') %>
+aclId | integer | <%= t('os.group.object.table.aclId') %>
+position | integer | <%= t('os.group.object.table.position') %>
+title | string | <%= t('os.group.object.table.title') %>
+titleF | string | <%= t('os.group.object.table.titleF') %>
+titleI | string | <%= t('os.group.object.table.titleI') %>
+titleE | string | <%= t('os.group.object.table.titleE') %>
+dossiersZkType | integer | <%= t('os.group.object.table.dossiersZkType') %>
+path | string | <%= t('os.group.object.table.path') %>
+updatedAt | string | <%= t('os.group.object.table.updatedAt') %>
+modifiedBy | string | <%= t('os.group.object.table.modifiedBy') %>
+createdAt | string | <%= t('os.group.object.table.createdAt') %>
+createdBy | string | <%= t('os.group.object.table.createdBy') %>
+posInLevel | integer | <%= t('os.group.object.table.posInLevel') %>
+archDeadline | integer | <%= t('os.group.object.table.archDeadline') %>
+archDisposeType | integer | <%= t('os.group.object.table.archDisposeType') %>
+archDataSecurity | integer | <%= t('os.group.object.table.archDataSecurity') %>
+archPublicStatus | integer | <%= t('os.group.object.table.archPublicStatus') %>
+archSecurityClass | integer | <%= t('os.group.object.table.archSecurityClass') %>
+archDeadLineSecCat | integer | <%= t('os.group.object.table.archDeadLineSecCat') %>
+
+<!-- GET -->
+
+## <%= t('os.group.getAll.title') %>
+```shell
+curl --request GET \
+  --url http://<%= t('ip') %>/api/v1/ubit/os/root/children \
+  --header "Authorization: Bearer {ACCESS_TOKEN}"
+```
+
+><%= t('message.replaceToken') %>
+
+><%= t('message.returnJson') %>
+
+```json
+[
+    {
+        "id": "1732778f-e5fa-4819-9070-e885cc22411e",
+        "parentId": "root",
+        "ouId": 1,
+        "userId": 1,
+        "aclId": 1,
+        "position": "0",
+        "title": "German title",
+        "titleF": null,
+        "titleI": null,
+        "titleE": null,
+        "dossiersZkType": 2,
+        "posType": "Gruppe",
+        "dossiersDefaultAcl": 1,
+        "path": "C:/testos/os/0",
+        "updatedAt": "2020-01-11 09:50:15.307 +00:00",
+        "modifiedBy": null,
+        "createdAt": "2020-01-11 09:50:06.166 +00:00",
+        "createdBy": null,
+        "posInLevel": 0,
+        "archDeadline": 10,
+        "archDisposeType": 1,
+        "archDataSecurity": 1,
+        "archPublicStatus": 1,
+        "archSecurityClass": 1,
+        "archDeadLineSecCat": 1
+    }
+]
+```
+
+<%= t('os.group.getAll.description') %>
+
+### <%= t('httpRequest') %>
+
+`GET http://<%= t('ip') %>/api/v1/ubit/os/root/children`
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+## <%= t('os.group.getById.title') %>
+
+```shell
+curl --request GET \
+  --url http://<%= t('ip') %>/api/v1/ubit/os/1732778f-e5fa-4819-9070-e885cc22411e \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+><%= t('message.replaceToken') %>
+
+><%= t('message.returnJson') %>
+
+```json
+{
+    "id": "1732778f-e5fa-4819-9070-e885cc22411e",
+    "parentId": "root",
+    "ouId": 1,
+    "userId": 1,
+    "aclId": 1,
+    "position": "0",
+    "title": "German title A",
+    "titleF": null,
+    "titleI": null,
+    "titleE": null,
+    "dossiersZkType": 2,
+    "posType": "Gruppe",
+    "dossiersDefaultAcl": 1,
+    "path": "C:/testos/os/0",
+    "updatedAt": "2020-01-11 09:50:15.307 +00:00",
+    "modifiedBy": null,
+    "createdAt": "2020-01-11 09:50:06.166 +00:00",
+    "createdBy": null,
+    "posInLevel": 0,
+    "archDeadline": 10,
+    "archDisposeType": 1,
+    "archDataSecurity": 1,
+    "archPublicStatus": 1,
+    "archSecurityClass": 1,
+    "archDeadLineSecCat": 1
+}
+```
+
+<%= t('os.group.getById.description') %>
+
+### <%= t('httpRequest') %>
+
+`GET http://<%= t('ip') %>/api/v1/ubit/os/<ID>`
+
+### <%= t('urlParameters') %>
+
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('os.group.getById.table.id') %>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+<!-- POST -->
+## <%= t('os.group.create.title') %>
+```shell
+curl --request POST \
+  --url http://<%= t('ip') %>/api/v1/ubit/os/root/children \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}' \
+  --data '{
+              "metadata":{
+                  "ouId":1,
+                  "aclId":1,
+                  "userId":1,
+                  "title":"German title"
+              }
+          }'
+```
+
+><%= t('message.replaceToken') %>
+
+<%= t('acl.create.description') %>
+
+### <%= t('httpRequest') %>
+
+`POST http://<%= t('ip') %>/api/v1/ubit/os/root/children`
+
+### <%= t('bodyParameters') %>
+<%= t('table.parameter') %> | <%= t('table.type') %> | <%= t('table.description') %>
+--------- | ----------- | -----------
+ouId * | integer | <%= t('os.group.object.table.ouId') %>
+aclId * | integer | <%= t('os.group.object.table.aclId') %>
+userId * | integer | <%= t('os.group.object.table.userId') %>
+title * | string | <%= t('os.group.object.table.title') %>
+titleF | string | <%= t('os.group.object.table.titleF') %>
+titleI | string | <%= t('os.group.object.table.titleI') %>
+titleE | string | <%= t('os.group.object.table.titleE') %>
+dossiersZkType  | integer | <%= t('os.group.object.table.dossiersZkType') %>
+dossiersDefaultAcl  | integer | <%= t('os.group.object.table.dossiersDefaultAcl') %>
+posType | integer | <%= t('os.group.object.table.posType') %>
+archDeadline | string | <%= t('os.group.object.table.archDeadline') %>
+archDisposeType | integer | <%= t('os.group.object.table.archDisposeType') %>
+archDataSecurity | integer | <%= t('os.group.object.table.archDataSecurity') %>
+archPublicStatus | integer | <%= t('os.group.object.table.archPublicStatus') %>
+archSecurityClass | integer | <%= t('os.group.object.table.ouId') %>
+archDeadLineSecCat | integer | <%= t('os.group.object.table.archDeadLineSecCat') %>
+
+<aside class="notice">
+<%= t('message.asterisk') %>
+</aside>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+<!-- PUT -->
+## <%= t('os.group.update.title') %>
+```shell
+curl --request PUT \
+  --url http://<%= t('ip') %>/api/v1/ubit/os/1732778f-e5fa-4819-9070-e885cc22411e \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}' \
+  --data '{"metadata":{"title":"German title update"}}'
+```
+
+><%= t('message.replaceToken') %>
+
+<%= t('os.group.update.description') %>
+
+### <%= t('httpRequest') %>
+`PUT http://<%= t('ip') %>/api/v1/ubit/os/<ID>`
+
+### <%= t('urlParameters') %>
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('os.group.update.table.id') %>
+
+### <%= t('bodyParameters') %>
+<%= t('table.parameter') %> | <%= t('table.type') %> | <%= t('table.description') %>
+--------- | ----------- | -----------
+ouId | integer | <%= t('os.group.object.table.ouId') %>
+aclId | integer | <%= t('os.group.object.table.aclId') %>
+userId | integer | <%= t('os.group.object.table.userId') %>
+title | string | <%= t('os.group.object.table.title') %>
+titleF | string | <%= t('os.group.object.table.titleF') %>
+titleI | string | <%= t('os.group.object.table.titleI') %>
+titleE | string | <%= t('os.group.object.table.titleE') %>
+dossiersZkType | integer | <%= t('os.group.object.table.dossiersZkType') %>
+dossiersDefaultAcl | integer | <%= t('os.group.object.table.dossiersDefaultAcl') %>
+posType | integer | <%= t('os.group.object.table.posType') %>
+archDeadline | string | <%= t('os.group.object.table.archDeadline') %>
+archDisposeType | integer | <%= t('os.group.object.table.archDisposeType') %>
+archDataSecurity | integer | <%= t('os.group.object.table.archDataSecurity') %>
+archPublicStatus | integer | <%= t('os.group.object.table.archPublicStatus') %>
+archSecurityClass | integer | <%= t('os.group.object.table.ouId') %>
+archDeadLineSecCat | integer | <%= t('os.group.object.table.archDeadLineSecCat') %>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+<!-- DELETE -->
+## <%= t('os.group.delete.title') %>
+```shell
+curl --request DELETE \
+  --url http://<%= t('ip') %>/api/v1/ubit/os/1732778f-e5fa-4819-9070-e885cc22411e \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+```javascript
+```
+><%= t('message.replaceToken') %>
+
+<%= t('os.group.delete.description') %>
+
+### <%= t('httpRequest') %>
+`DELETE http://<%= t('ip') %>/api/v1/ubit/os/<ID>`
+
+### <%= t('urlParameters') %>
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('os.group.delete.table.id') %>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+<!-- Category -->
+<!-- Object -->
+## <%= t('os.category.object.title') %>
+<%= t('table.name') %> | <%= t('table.type') %> | <%= t('table.description') %>
+--------- | ----------- | -----------
+id | integer | <%= t('os.category.object.table.id') %>
+parentId | integer | <%= t('os.category.object.table.parentId') %>
+ouId | integer | <%= t('os.category.object.table.ouId') %>
+userId | integer | <%= t('os.category.object.table.userId') %>
+aclId | integer | <%= t('os.category.object.table.aclId') %>
+position | integer | <%= t('os.category.object.table.position') %>
+title | string | <%= t('os.category.object.table.title') %>
+titleF | string | <%= t('os.category.object.table.titleF') %>
+titleI | string | <%= t('os.category.object.table.titleI') %>
+titleE | string | <%= t('os.category.object.table.titleE') %>
+dossiersZkType | integer | <%= t('os.category.object.table.dossiersZkType') %>
+path | string | <%= t('os.category.object.table.path') %>
+updatedAt | string | <%= t('os.category.object.table.updatedAt') %>
+modifiedBy | string | <%= t('os.category.object.table.modifiedBy') %>
+createdAt | string | <%= t('os.category.object.table.createdAt') %>
+createdBy | string | <%= t('os.category.object.table.createdBy') %>
+posInLevel | integer | <%= t('os.category.object.table.posInLevel') %>
+archDeadline | integer | <%= t('os.category.object.table.archDeadline') %>
+archDisposeType | integer | <%= t('os.category.object.table.archDisposeType') %>
+archDataSecurity | integer | <%= t('os.category.object.table.archDataSecurity') %>
+archPublicStatus | integer | <%= t('os.category.object.table.archPublicStatus') %>
+archSecurityClass | integer | <%= t('os.category.object.table.archSecurityClass') %>
+archDeadLineSecCat | integer | <%= t('os.category.object.table.archDeadLineSecCat') %>
+
+<!-- GET -->
+
+## <%= t('os.category.getAll.title') %>
+```shell
+curl --request GET \
+  --url http://<%= t('ip') %>/api/v1/ubit/os/1732778f-e5fa-4819-9070-e885cc22411e/children \
+  --header "Authorization: Bearer {ACCESS_TOKEN}"
+```
+
+><%= t('message.replaceToken') %>
+
+><%= t('message.returnJson') %>
+
+```json
+[
+    {
+        "id": "a037148c-283b-4935-8906-d766232227d8",
+        "parentId": "1732778f-e5fa-4819-9070-e885cc22411e",
+        "ouId": 1,
+        "userId": 1,
+        "aclId": 1,
+        "position": "00",
+        "title": "German title",
+        "titleF": null,
+        "titleI": null,
+        "titleE": null,
+        "dossiersZkType": 2,
+        "posType": "Rubrik",
+        "dossiersDefaultAcl": 1,
+        "path": "C:/testos/os/0/0",
+        "updatedAt": "2020-01-11 09:50:15.744 +00:00",
+        "modifiedBy": null,
+        "createdAt": "2020-01-11 09:50:06.276 +00:00",
+        "createdBy": null,
+        "posInLevel": 0,
+        "archDeadline": 10,
+        "archDisposeType": 1,
+        "archDataSecurity": 1,
+        "archPublicStatus": 1,
+        "archSecurityClass": 1,
+        "archDeadLineSecCat": 1
+    }
+]
+```
+
+<%= t('os.category.getAll.description') %>
+
+### <%= t('httpRequest') %>
+
+`GET http://<%= t('ip') %>/api/v1/ubit/os/<ID>/children`
+
+### <%= t('urlParameters') %>
+
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('os.category.getAll.table.id') %>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+## <%= t('os.category.getById.title') %>
+
+```shell
+curl --request GET \
+  --url http://<%= t('ip') %>/api/v1/ubit/os/a037148c-283b-4935-8906-d766232227d8 \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+><%= t('message.replaceToken') %>
+
+><%= t('message.returnJson') %>
+
+```json
+{
+    "id": "a037148c-283b-4935-8906-d766232227d8",
+    "parentId": "1732778f-e5fa-4819-9070-e885cc22411e",
+    "ouId": 1,
+    "userId": 1,
+    "aclId": 1,
+    "position": "00",
+    "title": "German title",
+    "titleF": null,
+    "titleI": null,
+    "titleE": null,
+    "dossiersZkType": 2,
+    "posType": "Rubrik",
+    "dossiersDefaultAcl": 1,
+    "path": "C:/testos/os/0/0",
+    "updatedAt": "2020-01-11 09:50:15.744 +00:00",
+    "modifiedBy": null,
+    "createdAt": "2020-01-11 09:50:06.276 +00:00",
+    "createdBy": null,
+    "posInLevel": 0,
+    "archDeadline": 10,
+    "archDisposeType": 1,
+    "archDataSecurity": 1,
+    "archPublicStatus": 1,
+    "archSecurityClass": 1,
+    "archDeadLineSecCat": 1
+}
+```
+
+<%= t('os.category.getById.description') %>
+
+### <%= t('httpRequest') %>
+
+`GET http://<%= t('ip') %>/api/v1/ubit/os/<ID>`
+
+### <%= t('urlParameters') %>
+
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('os.category.getById.table.id') %>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+<!-- POST -->
+## <%= t('os.category.create.title') %>
+```shell
+curl --request POST \
+  --url http://<%= t('ip') %>/api/v1/ubit/os/a037148c-283b-4935-8906-d766232227d8/children \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}' \
+  --data '{
+              "metadata":{
+                  "ouId":1,
+                  "aclId":1,
+                  "userId":1,
+                  "title":"German title"
+              }
+          }'
+```
+
+><%= t('message.replaceToken') %>
+
+<%= t('acl.create.description') %>
+
+### <%= t('httpRequest') %>
+
+`POST http://<%= t('ip') %>/api/v1/ubit/os/<ID>/children`
+
+### <%= t('urlParameters') %>
+
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('os.category.create.table.id') %>
+
+### <%= t('bodyParameters') %>
+<%= t('table.parameter') %> | <%= t('table.type') %> | <%= t('table.description') %>
+--------- | ----------- | -----------
+ouId * | integer | <%= t('os.category.object.table.ouId') %>
+aclId * | integer | <%= t('os.category.object.table.aclId') %>
+userId * | integer | <%= t('os.category.object.table.userId') %>
+title * | string | <%= t('os.category.object.table.title') %>
+titleF | string | <%= t('os.category.object.table.titleF') %>
+titleI | string | <%= t('os.category.object.table.titleI') %>
+titleE | string | <%= t('os.category.object.table.titleE') %>
+dossiersZkType  | integer | <%= t('os.category.object.table.dossiersZkType') %>
+dossiersDefaultAcl  | integer | <%= t('os.category.object.table.dossiersDefaultAcl') %>
+posType | integer | <%= t('os.category.object.table.posType') %>
+archDeadline | string | <%= t('os.category.object.table.archDeadline') %>
+archDisposeType | integer | <%= t('os.category.object.table.archDisposeType') %>
+archDataSecurity | integer | <%= t('os.category.object.table.archDataSecurity') %>
+archPublicStatus | integer | <%= t('os.category.object.table.archPublicStatus') %>
+archSecurityClass | integer | <%= t('os.category.object.table.ouId') %>
+archDeadLineSecCat | integer | <%= t('os.category.object.table.archDeadLineSecCat') %>
+
+<aside class="notice">
+<%= t('message.asterisk') %>
+</aside>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+<!-- PUT -->
+## <%= t('os.category.update.title') %>
+```shell
+curl --request PUT \
+  --url http://<%= t('ip') %>/api/v1/ubit/os/a037148c-283b-4935-8906-d766232227d8 \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}' \
+  --data '{"metadata":{"title":"German title update"}}'
+```
+
+><%= t('message.replaceToken') %>
+
+<%= t('os.category.update.description') %>
+
+### <%= t('httpRequest') %>
+`PUT http://<%= t('ip') %>/api/v1/ubit/os/<ID>`
+
+### <%= t('urlParameters') %>
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('os.category.update.table.id') %>
+
+### <%= t('bodyParameters') %>
+<%= t('table.parameter') %> | <%= t('table.type') %> | <%= t('table.description') %>
+--------- | ----------- | -----------
+ouId | integer | <%= t('os.category.object.table.ouId') %>
+aclId | integer | <%= t('os.category.object.table.aclId') %>
+userId | integer | <%= t('os.category.object.table.userId') %>
+title | string | <%= t('os.category.object.table.title') %>
+titleF | string | <%= t('os.category.object.table.titleF') %>
+titleI | string | <%= t('os.category.object.table.titleI') %>
+titleE | string | <%= t('os.category.object.table.titleE') %>
+dossiersZkType | integer | <%= t('os.category.object.table.dossiersZkType') %>
+dossiersDefaultAcl | integer | <%= t('os.category.object.table.dossiersDefaultAcl') %>
+posType | integer | <%= t('os.category.object.table.posType') %>
+archDeadline | string | <%= t('os.category.object.table.archDeadline') %>
+archDisposeType | integer | <%= t('os.category.object.table.archDisposeType') %>
+archDataSecurity | integer | <%= t('os.category.object.table.archDataSecurity') %>
+archPublicStatus | integer | <%= t('os.category.object.table.archPublicStatus') %>
+archSecurityClass | integer | <%= t('os.category.object.table.ouId') %>
+archDeadLineSecCat | integer | <%= t('os.category.object.table.archDeadLineSecCat') %>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+<!-- DELETE -->
+## <%= t('os.category.delete.title') %>
+```shell
+curl --request DELETE \
+  --url http://<%= t('ip') %>/api/v1/ubit/os/a037148c-283b-4935-8906-d766232227d8 \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+```javascript
+```
+><%= t('message.replaceToken') %>
+
+<%= t('os.category.delete.description') %>
+
+### <%= t('httpRequest') %>
+`DELETE http://<%= t('ip') %>/api/v1/ubit/os/<ID>`
+
+### <%= t('urlParameters') %>
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('os.category.delete.table.id') %>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+
+<!-- Folder -->
+<!-- Object -->
+## <%= t('os.folder.object.title') %>
+<%= t('table.name') %> | <%= t('table.type') %> | <%= t('table.description') %>
+--------- | ----------- | -----------
+id | integer | <%= t('os.folder.object.table.id') %>
+parentId | integer | <%= t('os.folder.object.table.parentId') %>
+ouId | integer | <%= t('os.folder.object.table.ouId') %>
+userId | integer | <%= t('os.folder.object.table.userId') %>
+aclId | integer | <%= t('os.folder.object.table.aclId') %>
+title | string | <%= t('os.folder.object.table.title') %>
+zkType | integer | <%= t('os.folder.object.table.zkType') %>
+zkTxt | string | <%= t('os.folder.object.table.zkTxt') %>
+path | string | <%= t('os.folder.object.table.path') %>
+fsId | integer | <%= t('os.folder.object.table.fsId') %>
+tags | string | <%= t('os.folder.object.table.tags') %>
+updatedAt | string | <%= t('os.folder.object.table.updatedAt') %>
+modifiedBy | string | <%= t('os.folder.object.table.modifiedBy') %>
+createdAt | string | <%= t('os.folder.object.table.createdAt') %>
+createdBy | string | <%= t('os.folder.object.table.createdBy') %>
+isClosed | boolean | <%= t('os.folder.object.table.isClosed') %>
+
+<!-- GET -->
+
+## <%= t('os.folder.getAll.title') %>
+```shell
+curl --request GET \
+  --url http://<%= t('ip') %>/api/v1/ubit/os/e341a7f1-c70d-4783-a4d6-502a31b13bef/children \
+  --header "Authorization: Bearer {ACCESS_TOKEN}"
+```
+
+><%= t('message.replaceToken') %>
+
+><%= t('message.returnJson') %>
+
+```json
+[
+    {
+        "id": "e341a7f1-c70d-4783-a4d6-502a31b13bef",
+        "parentId": "a037148c-283b-4935-8906-d766232227d8",
+        "ouId": 1,
+        "userId": 1,
+        "aclId": 1,
+        "title": "German title",
+        "zkType": 2,
+        "zkTxt": "1",
+        "path": "C:/testos/os/0/0/1",
+        "fsId": 1,
+        "tags": null,
+        "updatedAt": "2020-01-11 09:50:16.197 +00:00",
+        "modifiedBy": null,
+        "createdAt": "2020-01-11 09:50:06.401 +00:00",
+        "createdBy": null,
+        "isClosed": false
+    }
+]
+```
+
+<%= t('os.folder.getAll.description') %>
+
+### <%= t('httpRequest') %>
+
+`GET http://<%= t('ip') %>/api/v1/ubit/os/<ID>/children`
+
+### <%= t('urlParameters') %>
+
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('os.folder.getAll.table.id') %>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+## <%= t('os.folder.getById.title') %>
+
+```shell
+curl --request GET \
+  --url http://<%= t('ip') %>/api/v1/ubit/os/e341a7f1-c70d-4783-a4d6-502a31b13bef \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+><%= t('message.replaceToken') %>
+
+><%= t('message.returnJson') %>
+
+```json
+{
+    "id": "e341a7f1-c70d-4783-a4d6-502a31b13bef",
+    "parentId": "a037148c-283b-4935-8906-d766232227d8",
+    "ouId": 1,
+    "userId": 1,
+    "aclId": 1,
+    "title": "German title",
+    "zkType": 2,
+    "zkTxt": "1",
+    "path": "C:/testos/os/0/0/1",
+    "fsId": 1,
+    "tags": null,
+    "updatedAt": "2020-01-11 09:50:16.197 +00:00",
+    "modifiedBy": null,
+    "createdAt": "2020-01-11 09:50:06.401 +00:00",
+    "createdBy": null,
+    "isClosed": false
+}
+```
+
+<%= t('os.folder.getById.description') %>
+
+### <%= t('httpRequest') %>
+
+`GET http://<%= t('ip') %>/api/v1/ubit/os/<ID>`
+
+### <%= t('urlParameters') %>
+
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('os.folder.getById.table.id') %>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+<!-- POST -->
+## <%= t('os.folder.create.title') %>
+```shell
+curl --request POST \
+  --url http://<%= t('ip') %>/api/v1/ubit/os/a037148c-283b-4935-8906-d766232227d8/children \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}' \
+  --data '{
+              "metadata":{
+                  "ouId":1,
+                  "aclId":1,
+                  "userId":1,
+                  "title":"German title"
+              }
+          }'
+```
+
+><%= t('message.replaceToken') %>
+
+<%= t('acl.create.description') %>
+
+### <%= t('httpRequest') %>
+
+`POST http://<%= t('ip') %>/api/v1/ubit/os/<ID>/children`
+
+### <%= t('urlParameters') %>
+
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('os.folder.create.table.id') %>
+
+### <%= t('bodyParameters') %>
+<%= t('table.parameter') %> | <%= t('table.type') %> | <%= t('table.description') %>
+--------- | ----------- | -----------
+ouId * | integer | <%= t('os.folder.object.table.ouId') %>
+userId * | integer | <%= t('os.folder.object.table.userId') %>
+aclId * | integer | <%= t('os.folder.object.table.aclId') %>
+title * | string | <%= t('os.folder.object.table.title') %>
+
+<aside class="notice">
+<%= t('message.asterisk') %>
+</aside>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+<!-- PUT -->
+## <%= t('os.folder.update.title') %>
+```shell
+curl --request PUT \
+  --url http://<%= t('ip') %>/api/v1/ubit/os/a037148c-283b-4935-8906-d766232227d8 \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}' \
+  --data '{"metadata":{"title":"German title update"}}'
+```
+
+><%= t('message.replaceToken') %>
+
+<%= t('os.folder.update.description') %>
+
+### <%= t('httpRequest') %>
+`PUT http://<%= t('ip') %>/api/v1/ubit/os/<ID>`
+
+### <%= t('urlParameters') %>
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('os.folder.update.table.id') %>
+
+### <%= t('bodyParameters') %>
+<%= t('table.parameter') %> | <%= t('table.type') %> | <%= t('table.description') %>
+--------- | ----------- | -----------
+ouId | integer | <%= t('os.folder.object.table.ouId') %>
+userId | integer | <%= t('os.folder.object.table.userId') %>
+aclId | integer | <%= t('os.folder.object.table.aclId') %>
+title | string | <%= t('os.folder.object.table.title') %>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+<!-- DELETE -->
+## <%= t('os.folder.delete.title') %>
+```shell
+curl --request DELETE \
+  --url http://<%= t('ip') %>/api/v1/ubit/os/a037148c-283b-4935-8906-d766232227d8 \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+```javascript
+```
+><%= t('message.replaceToken') %>
+
+<%= t('os.folder.delete.description') %>
+
+### <%= t('httpRequest') %>
+`DELETE http://<%= t('ip') %>/api/v1/ubit/os/<ID>`
+
+### <%= t('urlParameters') %>
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('os.folder.delete.table.id') %>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+<!-- Subfolder -->
+<!-- Object -->
+## <%= t('os.subfolder.object.title') %>
+<%= t('table.name') %> | <%= t('table.type') %> | <%= t('table.description') %>
+--------- | ----------- | -----------
+id | integer | <%= t('os.subfolder.object.table.id') %>
+fileName | string | <%= t('os.subfolder.object.table.fileName') %>
+path | string | <%= t('os.subfolder.object.table.path') %>
+isFile | boolean | <%= t('os.subfolder.object.table.isFile') %>
+isDirectory | boolean | <%= t('os.subfolder.object.table.isDirectory') %>
+extension | string | <%= t('os.subfolder.object.table.extension') %>
+size | string | <%= t('os.subfolder.object.table.size') %>
+lastAccessedAt | string | <%= t('os.subfolder.object.table.lastAccessedAt') %>
+lastModifiedAt | string | <%= t('os.subfolder.object.table.lastModifiedAt') %>
+createdAt | string | <%= t('os.subfolder.object.table.createdAt') %>
+
+<!-- GET -->
+
+## <%= t('os.subfolder.getAll.title') %>
+```shell
+curl --request GET \
+  --url http://<%= t('ip') %>/api/v1/ubit/os/341a7f1-c70d-4783-a4d6-502a31b13bef/children \
+  --header "Authorization: Bearer {ACCESS_TOKEN}"
+```
+
+><%= t('message.replaceToken') %>
+
+><%= t('message.returnJson') %>
+
+```json
+[
+    {
+        "id": "157be781-7ba3-4a6d-9691-5a7045ce0289",
+        "fileName": "Subdossier-1",
+        "path": "C:/testos/os/0/0/1/Subdossier-1",
+        "isFile": false,
+        "isDirectory": true,
+        "extension": "",
+        "size": 0,
+        "lastAccessedAt": "2020-01-11T09:50:13.000Z",
+        "lastModifiedAt": "2020-01-11T09:50:13.000Z",
+        "createdAt": "2020-01-11T09:50:06.000Z"
+    },
+    {
+        "id": "baf97742-c21e-4f77-be26-157649973f14",
+        "fileName": "Subdossier-2",
+        "path": "C:/testos/os/0/0/1/Subdossier-2",
+        "isFile": false,
+        "isDirectory": true,
+        "extension": "",
+        "size": 0,
+        "lastAccessedAt": "2020-01-11T09:50:13.000Z",
+        "lastModifiedAt": "2020-01-11T09:50:13.000Z",
+        "createdAt": "2020-01-11T09:50:13.000Z"
+    }
+]
+```
+
+<%= t('os.subfolder.getAll.description') %>
+
+### <%= t('httpRequest') %>
+
+`GET http://<%= t('ip') %>/api/v1/ubit/os/<ID>/children`
+
+### <%= t('urlParameters') %>
+
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('os.subfolder.getAll.table.id') %>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+## <%= t('os.subfolder.getById.title') %>
+
+```shell
+curl --request GET \
+  --url http://<%= t('ip') %>/api/v1/ubit/os/157be781-7ba3-4a6d-9691-5a7045ce0289 \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+><%= t('message.replaceToken') %>
+
+><%= t('message.returnJson') %>
+
+```json
+{
+    "id": "157be781-7ba3-4a6d-9691-5a7045ce0289",
+    "fileName": "Subdossier-1",
+    "path": "C:/testos/os/0/0/1/Subdossier-1",
+    "isFile": false,
+    "isDirectory": true,
+    "extension": "",
+    "size": 0,
+    "lastAccessedAt": "2020-01-11T09:50:13.000Z",
+    "lastModifiedAt": "2020-01-11T09:50:13.000Z",
+    "createdAt": "2020-01-11T09:50:06.000Z"
+}
+```
+
+<%= t('os.subfolder.getById.description') %>
+
+### <%= t('httpRequest') %>
+
+`GET http://<%= t('ip') %>/api/v1/ubit/os/<ID>`
+
+### <%= t('urlParameters') %>
+
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('os.subfolder.getById.table.id') %>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+<!-- POST -->
+## <%= t('os.subfolder.create.title') %>
+```shell
+curl --request POST \
+  --url http://<%= t('ip') %>/api/v1/ubit/os/341a7f1-c70d-4783-a4d6-502a31b13bef/children \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}' \
+  --data '{"name": "New subfolder"}'
+```
+
+><%= t('message.replaceToken') %>
+
+<%= t('acl.create.description') %>
+
+### <%= t('httpRequest') %>
+
+`POST http://<%= t('ip') %>/api/v1/ubit/os/<ID>/children`
+
+### <%= t('urlParameters') %>
+
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('os.subfolder.create.table.id') %>
+
+### <%= t('bodyParameters') %>
+<%= t('table.parameter') %> | <%= t('table.type') %> | <%= t('table.description') %>
+--------- | ----------- | -----------
+name * | string | <%= t('os.subfolder.object.table.name') %>
+
+<aside class="notice">
+<%= t('message.asterisk') %>
+</aside>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+<!-- PUT -->
+## <%= t('os.subfolder.update.title') %>
+```shell
+curl --request PUT \
+  --url http://<%= t('ip') %>/api/v1/ubit/os/157be781-7ba3-4a6d-9691-5a7045ce0289 \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}' \
+  --data '{"metadata":{"title":"German title update"}}'
+```
+
+><%= t('message.replaceToken') %>
+
+<%= t('os.subfolder.update.description') %>
+
+### <%= t('httpRequest') %>
+`PUT http://<%= t('ip') %>/api/v1/ubit/os/<ID>`
+
+### <%= t('urlParameters') %>
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('os.subfolder.update.table.id') %>
+
+### <%= t('bodyParameters') %>
+<%= t('table.parameter') %> | <%= t('table.type') %> | <%= t('table.description') %>
+--------- | ----------- | -----------
+name | string | <%= t('os.subfolder.object.table.name') %>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>
+
+<!-- DELETE -->
+## <%= t('os.subfolder.delete.title') %>
+```shell
+curl --request DELETE \
+  --url http://<%= t('ip') %>/api/v1/ubit/os/157be781-7ba3-4a6d-9691-5a7045ce0289 \
+  --header 'Authorization: Bearer {ACCESS_TOKEN}'
+```
+
+```javascript
+```
+><%= t('message.replaceToken') %>
+
+<%= t('os.subfolder.delete.description') %>
+
+### <%= t('httpRequest') %>
+`DELETE http://<%= t('ip') %>/api/v1/ubit/os/<ID>`
+
+### <%= t('urlParameters') %>
+<%= t('table.parameter') %> | <%= t('table.description') %>
+--------- | -----------
+ID | <%= t('os.subfolder.delete.table.id') %>
+
+<aside class="success">
+<%= t('message.remember') %>
+</aside>

@@ -34,8 +34,195 @@ en:
 
   os:
     title: "OS"
-    object:
-      title: "OS Object"
+    group:
+      object:
+          title: "Group Object"
+          table:
+            id: "Id of the group"
+            parentId: "Parent Id of the group"
+            ouId: "OU id"
+            userId: "User id"
+            aclId: "ACL id"
+            position: "TODO"
+            title: "German title"
+            titleF: "French title"
+            titleI: "Italian title"
+            titleE: "English title"
+            dossiersZkType: "TODO"
+            posType: "Gruppe"
+            dossiersDefaultAcl: "Default ACL"
+            path: "Path"
+            updatedAt: "Updated at"
+            modifiedBy: "Modifier by"
+            createdAt: "Created at"
+            createdBy: "Created by"
+            posInLevel: "Position in level"
+            archDeadline: "Deadline id"
+            archDisposeType: "Dispose type id"
+            archDataSecurity: "Data security id"
+            archPublicStatus: "Public status id"
+            archSecurityClass: "Security class id"
+            archDeadLineSecCat: "Deadline security category id"
+      getAll:
+        title: "Get all group"
+        description: "This endpoint retrieves all group."
+      getById:
+        title: "Get group by its ID"
+        description: "This endpoint retrieves a specific group."
+        table:
+          id: "The ID of the group to retrieve"
+      create:
+        title: "Create a group"
+        description: "This endpoint create a group."
+      update:
+        title: "Update a group"
+        description: "This endpoint update a group."
+        table:
+          id: "The ID of the group to update"
+      delete:
+        title: "Delete a group"
+        description: "This endpoint delete a group."
+        table:
+          id: "The ID of the group to delete"
+    category:
+      object:
+        title: "Category Object"
+        table:
+          id: "Id of the category"
+          parentId: "Parent Id of the category"
+          ouId: "OU id"
+          userId: "User id"
+          aclId: "ACL id"
+          position: "TODO"
+          title: "German title"
+          titleF: "French title"
+          titleI: "Italian title"
+          titleE: "English title"
+          dossiersZkType: "TODO"
+          posType: "Rubrik"
+          dossiersDefaultAcl: "Default ACL"
+          path: "Path"
+          updatedAt: "Updated at"
+          modifiedBy: "Modifier by"
+          createdAt: "Created at"
+          createdBy: "Created by"
+          posInLevel: "Position in level"
+          archDeadline: "Deadline id"
+          archDisposeType: "Dispose type id"
+          archDataSecurity: "Data security id"
+          archPublicStatus: "Public status id"
+          archSecurityClass: "Security class id"
+          archDeadLineSecCat: "Deadline security category id"
+      getAll:
+        title: "Get all category"
+        description: "This endpoint retrieves all category from a group."
+        table:
+          id: "The ID of the group to retrieve all category from."
+      getById:
+        title: "Get category by its ID"
+        description: "This endpoint retrieves a specific category."
+        table:
+          id: "The ID of the category to retrieve"
+      create:
+        title: "Create a category"
+        description: "This endpoint create a category."
+        table:
+          id: "The ID of the group to create the category in."
+      update:
+        title: "Update a category"
+        description: "This endpoint update a category."
+        table:
+          id: "The ID of the category to update"
+      delete:
+        title: "Delete a category"
+        description: "This endpoint delete a category."
+        table:
+          id: "The ID of the category to delete"
+    folder:
+      object:
+        title: "Folder Object"
+        table:
+          id: "Id of the folder"
+          parentId: "Parent Id of the folder"
+          ouId: "OU id"
+          userId: "User id"
+          aclId: "ACL id"
+          title: "German title"
+          zkType: "TODO"
+          zkTxt: "TODO"
+          path: "Path"
+          fsfsIdId: "TODO"
+          tags: "TODO"
+          updatedAt: "Updated at"
+          modifiedBy: "Modifier by"
+          createdAt: "Created at"
+          createdBy: "Created by"
+          isClosed: "TODO"
+      getAll:
+        title: "Get all folder"
+        description: "This endpoint retrieves all folder from a category."
+        table:
+          id: "The ID of the category to retrieve all folder from."
+      getById:
+        title: "Get folder by its ID"
+        description: "This endpoint retrieves a specific folder."
+        table:
+          id: "The ID of the folder to retrieve"
+      create:
+        title: "Create a folder"
+        description: "This endpoint create a folder."
+        table:
+          id: "The ID of the category to create the folder in."
+      update:
+        title: "Update a folder"
+        description: "This endpoint update a folder."
+        table:
+          id: "The ID of the folder to update"
+      delete:
+        title: "Delete a folder"
+        description: "This endpoint delete a folder."
+        table:
+          id: "The ID of the folder to delete"
+    subfolder:
+      object:
+        title: "Subfolder Object"
+        table:
+          id: "Id of the subfolder"
+          fileName: "The name of the subfolder"
+          path: "The path of the subfolder"
+          isFile: "False"
+          isDirectory: "True"
+          extension: "-"
+          size: "Size"
+          lastAccessedAt: "Last accessed"
+          lastModifiedAt: "Last update"
+          createdAt: "Created at"
+          name: "Name of the subfolder"
+      getAll:
+        title: "Get all subfolder"
+        description: "This endpoint retrieves all subfolder from a folder."
+        table:
+          id: "The ID of the folder to retrieve all subfolder from."
+      getById:
+        title: "Get subfolder by its ID"
+        description: "This endpoint retrieves a specific subfolder."
+        table:
+          id: "The ID of the subfolder to retrieve"
+      create:
+        title: "Create a subfolder"
+        description: "This endpoint create a subfolder."
+        table:
+          id: "The ID of the folder to create the subfolder in."
+      update:
+        title: "Update a subfolder"
+        description: "This endpoint update a subfolder."
+        table:
+          id: "The ID of the subfolder to update"
+      delete:
+        title: "Delete a subfolder"
+        description: "This endpoint delete a subfolder."
+        table:
+          id: "The ID of the subfolder to delete"
 
   acl:
     title: "ACL"
