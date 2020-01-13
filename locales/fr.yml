@@ -7,7 +7,7 @@ fr:
     title: "Introduction"
     description:
       p1: "Bienvenue dans l'API HYBRID-REST! Vous pouvez utiliser notre API pour accéder aux endpoints de l'API HYBRID-REST, qui peuvent obtenir des informations depuis le plan de classement."
-      p2: "Vous pouvez afficher des exemples de code dans la zone foncé à droite et vous pouvez changer le langage de programmation des exemples avec les onglets en haut à droite."
+      p2: "Vous pouvez afficher des exemples de code dans la zone foncée à droite et vous pouvez changer le langage de programmation des exemples avec les onglets en haut à droite."
 
   authentication:
     title: "Authentification"
@@ -159,70 +159,70 @@ fr:
           createdBy: "Créer par"
           isClosed: "TODO"
       getAll:
-        title: "Get all folder"
-        description: "This endpoint retrieves all folder from a category."
+        title: "Obtenir tous les dossier"
+        description: "Ce endpoint récupère tous les dossier depuis une rubrique."
         table:
-          id: "The ID of the category to retrieve all folder from."
+          id: "L'id de la rubrique à partir de laquel récupérer tous les dossiers."
       getById:
-        title: "Get folder by its ID"
-        description: "This endpoint retrieves a specific folder."
+        title: "Obtenir un dossier par son id"
+        description: "Ce endpoint récupère un dossier spécifique."
         table:
-          id: "The ID of the folder to retrieve"
+          id: "L'id du dossier à récupérer"
       create:
-        title: "Create a folder"
-        description: "This endpoint create a folder."
+        title: "Créer un dossier"
+        description: "Ce endpoint créer un dossier."
         table:
-          id: "The ID of the category to create the folder in."
+          id: "L'id de la rubrique dans laquelle créer un dossier."
       update:
-        title: "Update a folder"
-        description: "This endpoint update a folder."
+        title: "Mettre à jour un dossier"
+        description: "Ce endpoint met à jour un dossier."
         table:
-          id: "The ID of the folder to update"
+          id: "L'id du dossier à mettre à jour"
       delete:
-        title: "Delete a folder"
-        description: "This endpoint delete a folder."
+        title: "Supprimer un dossier"
+        description: "Ce endpoint supprime un dossier."
         table:
-          id: "The ID of the folder to delete"
+          id: "L'id du dossier à supprimer"
     subfolder:
       object:
-        title: "Subfolder Object"
+        title: "Objet sous-dossier"
         table:
-          id: "Id of the subfolder"
-          fileName: "The name of the subfolder"
-          path: "The path of the subfolder"
+          id: "Id du sous-dossier"
+          fileName: "Nom du sous-dossier"
+          path: "Le chemin d'accès du sous-dossier"
           isFile: "False"
           isDirectory: "True"
           extension: "-"
-          size: "Size"
-          lastAccessedAt: "Last accessed"
-          lastModifiedAt: "Last update"
-          createdAt: "Created at"
-          name: "Name of the subfolder"
+          size: "Taille"
+          lastAccessedAt: "Dernière accès"
+          lastModifiedAt: "Dernière modification"
+          createdAt: "Date de création"
+          name: "Nom du sous-dossier"
       getAll:
-        title: "Get all subfolder"
-        description: "This endpoint retrieves all subfolder from a folder."
+        title: "Obtenir tous les sous-dossier"
+        description: "Ce endpoint récupère tous les sous-dossier depuis un dossier."
         table:
-          id: "The ID of the folder to retrieve all subfolder from."
+          id: "L'id du dossier à partir duquel récupérer tous les sous-dossiers."
       getById:
-        title: "Get subfolder by its ID"
-        description: "This endpoint retrieves a specific subfolder."
+        title: "Obtenir un sous-dossier par son id"
+        description: "Ce endpoint récupère un sous-dossier spécifique."
         table:
-          id: "The ID of the subfolder to retrieve"
+          id: "L'id du sous-dossier à récupérer"
       create:
-        title: "Create a subfolder"
-        description: "This endpoint create a subfolder."
+        title: "Créer un sous-dossier"
+        description: "Ce endpoint créer un sous-dossier."
         table:
-          id: "The ID of the folder to create the subfolder in."
+          id: "L'id du dossier dans lequel créer un sous-dossier."
       update:
-        title: "Update a subfolder"
-        description: "This endpoint update a subfolder."
+        title: "Mettre à jour un sous-dossier"
+        description: "Ce endpoint met à jour un sous-dossier."
         table:
-          id: "The ID of the subfolder to update"
+          id: "L'id du sous-dossier à mettre à jour"
       delete:
-        title: "Delete a subfolder"
-        description: "This endpoint delete a subfolder."
+        title: "Supprimer un sous-dossier"
+        description: "Ce endpoint supprime un sous-dossier."
         table:
-          id: "The ID of the subfolder to delete"
+          id: "L'id du sous-dossier à supprimer"
 
   acl:
     title: "ACL"
